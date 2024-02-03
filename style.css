@@ -49,6 +49,13 @@ body {
     margin: 20px 0;
 }
 
+
+/* Picutre Styling */
+.home-section{
+    width: 100px;
+    margin:60px;
+}
+
 /* Footer Styling */
 .footer {
     background-color: #333;
