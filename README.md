@@ -10,4 +10,4 @@
 ##### License  
 first site that we used for our first web API is going to be this link as shown https://developers.google.com/maps/documentation/javascript/places 
 second was for all the picture links that we have retrieved in order to attach it to each part dog picture for home section URL is 
-https://inspirationseek.com/38-cute-dog-pictures/
+https://inspirationseek.com/38-cute-dog-pictures/ next after will be a picutre of a kitty for our about section here is the URL https://wildlife-photographs.blogspot.com/2013/07/Cat-Cute-Animals.html 
