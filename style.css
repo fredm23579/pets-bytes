@@ -76,3 +76,10 @@ body {
         font-size: 24px;
     }
 }
+
+@media (max-width: 480px) {
+    .top-bar h1 {
+        display: block;
+        font-size: 24px;
+    }
+}
