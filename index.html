@@ -1,8 +1,6 @@
-<!-- Document Type Style CSS attachment and Title in Head Tag-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags and stylesheets -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet's Bytes!</title>
@@ -14,8 +12,22 @@
     <!-- Site Header -->
     <header class="top-bar">
         <h1>Pet's Bytes</h1>
-        <nav class="nav-items">
-            <ul>
+
+
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="nav-items">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#profile">Add Pet Profile</a></li>
+                <!-- Additional navigation items -->
+
+        <nav>
+            <ul class="nav-items">
+
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -24,11 +36,40 @@
                 <li><a href="signup.html">Sign Up</a></li>
                 <li><a href="profile.html">My Profile</a></li>
                 <!-- Add more links as needed -->
+
             </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
+
+    <main class="grid-container">
+        <section id="home" class="content">
+            <h2>Welcome to Pet's Bytes!</h2>
+            <!-- Home Section Content -->
+        </section>
+
+        <section id="about" class="content">
+            <h3>About Us</h3>
+            <!-- About Section Content -->
+        </section>
+
+        <!-- Additional Sections -->
+        <section id="contact" class="content">
+            <!-- Contact Section Content -->
+        </section>
+
+        <section id="services" class="content">
+            <!-- Services Section Content -->
+        </section>
+
+        <section id="profile" class="content">
+            <h3>Add Your Pet's Profile</h3>
+            <!-- Pet Profile Form Section -->
+        </section>
+
+        <!-- Further sections -->
+
   <main class="grid-container">
         <section class="content">
             <h1>Welcome to Pet's Bytes!</h1>
@@ -116,6 +157,7 @@
             </section>
   
           </section>
+
     </main>
 
     <!-- Site Footer -->
@@ -124,18 +166,13 @@
     </footer>
 
     <!-- Notification Modal -->
-    <div id="notificationModal" title="Notification">
-        <!-- Notification content will be populated by script.js -->
-    </div>
+    <div id="notificationModal" title="Notification"></div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/foundation/6.4.3/js/foundation.min.js"></script>
     <script src="script.js"></script>
-
-
-
 
 </body>
 </html>
