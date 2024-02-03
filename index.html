@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags and stylesheets -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet's Bytes!</title>
@@ -13,65 +12,46 @@
     <!-- Site Header -->
     <header class="top-bar">
         <h1>Pet's Bytes</h1>
+        <!-- Navigation -->
         <nav>
             <ul class="nav-items">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-                <li><a href="profile.html">My Profile</a></li>
-                <!-- Add more links as needed -->
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#profile">Add Pet Profile</a></li>
+                <!-- Additional navigation items -->
             </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
     <main class="grid-container">
-        <section class="content">
+        <section id="home" class="content">
             <h2>Welcome to Pet's Bytes!</h2>
-
-            <!-- Home Section -->
-            <section id="home-section">
-                <img src="placeholder-image.jpg" alt="Placeholder Image of a Dog" class="float-center">
-                <p>Welcome to the front page of Pet's Bytes where you can find everything your pet needs!</p>
-            </section>
-
-            <!-- About Section -->
-            <section id="about-section">
-                <img src="placeholder-image.jpg" alt="Placeholder Image of a Cat" class="float-center">
-                <p>Learn more about Pet's Bytes, our mission, and the services we offer.</p>
-            </section>
-
-            <!-- Pet Profile Form Section -->
-            <section id="profile-form-section">
-                <h3>Add Your Pet's Profile</h3>
-                <form id="petProfileForm">
-                    <input type="text" id="petName" placeholder="Pet's Name" required>
-                    <input type="text" id="petBreed" placeholder="Pet's Breed" required>
-                    <!-- Additional fields -->
-                    <button type="submit" class="button">Save Profile</button>
-                </form>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact-section">
-                <h3>Contact Us</h3>
-                <p>If you have any questions or need assistance, please contact us.</p>
-                <!-- Contact details -->
-            </section>
-
-            <!-- Services Section -->
-            <section id="services-section">
-                <h3>Our Services</h3>
-                <p>Explore the range of services we offer for your pets, including veterinary care, grooming, and more.</p>
-                <!-- List of services -->
-            </section>
-
-            <!-- Additional sections as needed -->
-
+            <!-- Home Section Content -->
         </section>
+
+        <section id="about" class="content">
+            <h3>About Us</h3>
+            <!-- About Section Content -->
+        </section>
+
+        <!-- Additional Sections -->
+        <section id="contact" class="content">
+            <!-- Contact Section Content -->
+        </section>
+
+        <section id="services" class="content">
+            <!-- Services Section Content -->
+        </section>
+
+        <section id="profile" class="content">
+            <h3>Add Your Pet's Profile</h3>
+            <!-- Pet Profile Form Section -->
+        </section>
+
+        <!-- Further sections -->
     </main>
 
     <!-- Site Footer -->
@@ -80,9 +60,7 @@
     </footer>
 
     <!-- Notification Modal -->
-    <div id="notificationModal" title="Notification">
-        <!-- Notification content will be populated by script.js -->
-    </div>
+    <div id="notificationModal" title="Notification"></div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
