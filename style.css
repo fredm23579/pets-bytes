@@ -72,6 +72,12 @@ body {
 @media (max-width: 768px) {
     .nav-items li {
         display: block;
+
+@media (max-width: 480px) {
+    .top-bar h1 {
+        font-size: 24px;
+    }
+}
         margin: 10px 0;
     }
 }
