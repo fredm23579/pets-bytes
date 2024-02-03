@@ -52,8 +52,10 @@ body {
 
 /* Picutre Styling */
 .home-section{
-    width: 100px;
-    margin:60px;
+    max-width: 150px;
+}
+#about-section{
+    max-width: 150px;
 }
 
 /* Footer Styling */
