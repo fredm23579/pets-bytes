@@ -1,13 +1,16 @@
-# Repository Name
+# Repository Name: Pets-Bytes
 
-## User Story
- As a pet parent I would like to have information of all pet related services and buisness within a give radius of my current location. I would like to be able to find vetanarian and pet stores located near me. 
+## User Story/Description
+As a pet parent, I want to access information about all pet-related services and businesses within a given radius of my current location. This includes finding veterinarians and pet stores nearby.
 
 ### Usage 
 
-#### Installation 
+#### Installation
+Instructions on how to install and set up the project.
 
-##### License  
-first site that we used for our first web API is going to be this link as shown https://developers.google.com/maps/documentation/javascript/places 
-second was for all the picture links that we have retrieved in order to attach it to each part dog picture for home section URL is 
-https://inspirationseek.com/38-cute-dog-pictures/ next after will be a picutre of a kitty for our about section here is the URL https://wildlife-photographs.blogspot.com/2013/07/Cat-Cute-Animals.html 
+##### License
+This project uses various external resources:
+- Google Maps JavaScript API for location-based services: [Google Maps API](https://developers.google.com/maps/documentation/javascript/places)
+- Images for the website:
+  - Dog picture for the home section: [Dog Image](https://inspirationseek.com/38-cute-dog-pictures/)
+  - Cat picture for the about section: [Cat Image](https://wildlife-photographs.blogspot.com/2013/07/Cat-Cute-Animals.html)
