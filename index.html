@@ -76,12 +76,17 @@
     </div>
 
     <!-- Modal for Google Maps -->
+    <!-- Button to Open the Modal -->
+    <button onclick="openMapModal()">Find Nearby Pet Services</button>
+    <!-- The Modal -->
     <div id="mapModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <div id="map"></div>
+            <span class="close" onclick="closeMapModal()">&times;</span>
+            <h2>Nearby Pet Services</h2>
+            <div id="map"></div> <!-- Map will be displayed here -->
         </div>
     </div>
+
 
     <!-- Site Footer -->
     <footer class="footer">
