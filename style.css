@@ -78,6 +78,10 @@ img {
     background: rgba(0, 0, 0, 0.6);
 }
 
+.popup.active {
+    display: block; /* Shown when active */
+}
+
 .popup .overlay {
     position: absolute;
     width: 100%;
