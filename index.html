@@ -58,13 +58,23 @@
         </section>
 
         <section id="profile" class="content">
-            <h2>Add Your Pet's Profile</h2>
+            <h2>Add Your Pet's Profile</h2>      
+            <!-- Popup for Adding Pet Profile -->
+            <div class="popup" id="popup-1">
+                <div class="overlay"></div>
+                <div class="content">
+                    <!-- Content for popup goes here -->
+                </div>
+                <div class="close-btn" onclick="togglepopup()">&times;</div>
+            </div>
+            <button onclick="togglepopup()">Add Pet Profile Here</button>
             <form id="petProfileForm">
                 <input type="text" id="petName" placeholder="Pet's Name" required>
                 <input type="text" id="petBreed" placeholder="Pet's Breed" required>
                 <button type="submit" class="button">Save Profile</button>
             </form>
         </section>
+        
     </main>
 
     <!-- Site Footer -->
