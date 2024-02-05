@@ -4,3 +4,7 @@ function togglePopup() {
     popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    var currentYear = new Date().getFullYear();
+    document.getElementById('current-year').textContent = currentYear;
+});
