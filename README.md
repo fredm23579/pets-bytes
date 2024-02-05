@@ -36,6 +36,7 @@ As a pet parent, I want to access information about all pet-related services and
 - [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/places) for location-based services.
 - Dog picture for the home section: [Dog Image](https://inspirationseek.com/38-cute-dog-pictures/)
 - Cat picture for the about section: [Cat Image](https://wildlife-photographs.blogspot.com/2013/07/Cat-Cute-Animals.html)
+https://www.facebook.com/profile.php?id=61556419702881&mibextid=LQQJ4d
 
 ## License
 This project is licensed under the [MIT License](LICENSE). See the LICENSE file for more details.
@@ -49,3 +50,4 @@ For support, queries, or suggestions, please open an issue in the repository or 
 ---
 
 *This README was last updated on [insert date].*
+>>>>>>> dde5e07204d45d2b34c2b5de84c51375c1ea8f0b
