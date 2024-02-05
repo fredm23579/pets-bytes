@@ -12,10 +12,14 @@ html, body {
 
 /* Header Styling */
 .top-bar {
-    background-color: white;
-    color: rgb(1, 31, 75);
+    background-color: #333;
+    color: white;
     padding: 10px 0;
     text-align: center;
+}
+
+.top-bar h1 {
+    margin: 0;
 }
 
 /* Navigation Bar Styling */
@@ -32,7 +36,7 @@ html, body {
 
 .nav-items a {
     text-decoration: none;
-    color: rgb(1, 31, 75);
+    color: white;
     transition: color 0.3s ease;
 }
 
