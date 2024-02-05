@@ -18,8 +18,8 @@ body {
 
 /* Header Styling */
 .top-bar {
-    background-color: #333;
-    color: white;
+    background-color: white;
+    color: rgb(1, 31, 75);
     padding: 10px 0;
     text-align: center;
 }
@@ -87,4 +87,60 @@ img {
     .top-bar h1 {
         font-size: 24px;
     }
+}
+
+/*
+
+
+.popup .overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: blanchedalmond;
+    z-index: 1;
+    display: none;
+
+
+}
+
+
+.popup .content{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%) scale(0);
+background-color: black;
+width: 450px;
+height: 50px;
+z-index: 2;
+text-align: center;
+padding: 20px;
+box-sizing: border-box;
+
+}
+ 
+.popup .close-btn{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: #222;
+    background-color: black;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+
+.popup .active .overlay {
+    display: block;
+}
+.popup.active .content{
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%,-50%) scale(0);
 }
