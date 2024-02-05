@@ -8,9 +8,9 @@ function togglePopup() {
     var popup = document.getElementById("popup-1");
     popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
 }
-
+// Google Maps Modal Code ******************************************************
 function initMap() {
-    var location = {lat: -34.397, lng: 150.644}; // Default location
+    var location = { lat: -34.397, lng: 150.644 }; // Default location
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 8,
         center: location
@@ -21,15 +21,17 @@ function initMap() {
     });
 }
 
-// Function to open the modal and display the map **************************
-function openModal() {
-    document.getElementById("mapModal").style.display = "block";
-    initMap(); // Initialize the map when the modal is opened
+// Function to open the modal and display the map
+function openMapModal() {
+    var modal = document.getElementById("mapModal");
+    modal.style.display = "block";
+    initMap(); // Initialize the map when the modal opens
 }
 
 // Function to close the modal
-function closeModal() {
-    document.getElementById("mapModal").style.display = "none";
+function closeMapModal() {
+    var modal = document.getElementById("mapModal");
+    modal.style.display = "none";
 }
 
 // Load the Google Maps script
