@@ -12,14 +12,10 @@ html, body {
 
 /* Header Styling */
 .top-bar {
-    background-color: #333;
-    color: white;
+    background-color: #333; /* Same as footer */
+    color: white; /* Text color */
     padding: 10px 0;
     text-align: center;
-}
-
-.top-bar h1 {
-    margin: 0;
 }
 
 /* Navigation Bar Styling */
@@ -36,12 +32,12 @@ html, body {
 
 .nav-items a {
     text-decoration: none;
-    color: white;
+    color: white; /* Text color matching footer */
     transition: color 0.3s ease;
 }
 
 .nav-items a:hover {
-    color: #008CBA;
+    color: #008CBA; /* Color for hover effect */
 }
 
 /* Section Styling */
@@ -59,8 +55,8 @@ img {
 
 /* Footer Styling */
 .footer {
-    background-color: #333;
-    color: white;
+    background-color: #333; /* Dark background */
+    color: white; /* Text color */
     text-align: center;
     padding: 20px 0;
     margin-top: auto;
