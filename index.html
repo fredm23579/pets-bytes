@@ -19,64 +19,57 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#profile"> Add Pet Profile Here</a></li>
             </ul>
-
-            <!-- Added a simple div for popup for making a pet profile. Needs work placeholder for now. -->
-            <div class="popup" id=popup-1></popup-1>
-            <div class="overlay"></div>
-        <div class="content"></div>
-    <div class="close-btn" oneclick="togglepopup()">&times;</div>
-</div>
-
-<button oneclick="togglepopup()">Add Pet Profile Here</button>
-
         </nav>
     </header>
 
     <!-- Main Content -->
     <main class="grid-container">
+        <!-- Home Section -->
         <section id="home" class="content">
             <h2>Welcome to Pet's Bytes!</h2>
             <img src="https://inspirationseek.com/wp-content/uploads/2016/02/Cute-Dog-Photo.jpg" alt="Cute Dog" class="float-center" />
-            <p>This is our front page of our site where you can navigate through all our site has to offer for our furry family!</p>
+            <p>This is our front page where you can navigate through all our site has to offer for our furry family!</p>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="content">
             <h2>About Us</h2>
             <img src="https://4.bp.blogspot.com/-qIK-2jm1Dp8/UeN7c4y-kxI/AAAAAAAAD6w/mgpYJ2labWg/s1600/Cute-Cat-Facts.jpg" alt="Cute Cat" class="float-center" />
             <p>We are a pet care app that offers a variety of services to help you find care for your pets, including locating veterinarians, pet sitters, dog walking, and pet grooming. In addition, you can make a pet profile for your pet.</p>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="content">
             <h2>Contact Us</h2>
-            <p>Attached here will be links to phone numbers, emails, and other contact information for our different services.</p>
+            <p>Here you will find links to phone numbers, emails, and other contact information for our different services.</p>
         </section>
 
+        <!-- Services Section -->
         <section id="services" class="content">
             <h2>Our Services</h2>
-            <p>This section will provide access to the vet options we offer as well as pet grooming and sitters for everyone to use.</p>
+            <p>Access to the vet options we offer as well as pet grooming and sitters for everyone to use.</p>
         </section>
 
+        <!-- Profile Section -->
         <section id="profile" class="content">
-            <h2>Add Your Pet's Profile</h2>      
-            <!-- Popup for Adding Pet Profile -->
-            <div class="popup" id="popup-1">
-                <div class="overlay"></div>
-                <div class="content">
-                    <!-- Content for popup goes here -->
-                </div>
-                <div class="close-btn" onclick="togglepopup()">&times;</div>
-            </div>
-            <button onclick="togglepopup()">Add Pet Profile Here</button>
+            <h2>Add Your Pet's Profile</h2>
+            <button onclick="togglePopup()">Add Pet Profile Here</button>
+        </section>
+    </main>
+
+    <!-- Popup for Adding Pet Profile -->
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="close-btn" onclick="togglePopup()">&times;</div>
             <form id="petProfileForm">
                 <input type="text" id="petName" placeholder="Pet's Name" required>
                 <input type="text" id="petBreed" placeholder="Pet's Breed" required>
                 <button type="submit" class="button">Save Profile</button>
             </form>
-        </section>
-        
-    </main>
+        </div>
+    </div>
 
     <!-- Site Footer -->
     <footer class="footer">
