@@ -108,6 +108,7 @@ img {
     cursor: pointer;
 }
 
+/* Modal Styling */
 .modal {
     display: none;
     position: fixed;
@@ -128,6 +129,7 @@ img {
     width: 80%;
 }
 
+/* Close Styling */
 .close {
     color: #aaa;
     float: right;

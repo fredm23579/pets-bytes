@@ -34,7 +34,7 @@ function closeMapModal() {
     modal.style.display = "none";
 }
 
-// Load the Google Maps script
+// Load the Google Maps script 
 function loadGoogleMaps() {
     var script = document.createElement('script');
     script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap`;
