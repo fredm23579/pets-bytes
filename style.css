@@ -50,6 +50,7 @@ html, body {
 /* Paragragh Text Styling */
 p {
     font-size: 20px;
+    padding: 25px;
 }
 /* Picture Styling */
 img {
