@@ -47,6 +47,9 @@ html, body {
     text-align: center;
 }
 
+p {
+    font-size: 20px;
+}
 /* Picture Styling */
 img {
     max-width: 100%;
