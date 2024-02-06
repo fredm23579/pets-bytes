@@ -97,7 +97,7 @@ button {
 }
 
 .popup.active {
-    display: block; /* Shown when active */
+    display: block; /* Shown when active */ 
 }
 
 .popup .overlay {
