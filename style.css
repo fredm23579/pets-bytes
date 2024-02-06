@@ -47,6 +47,11 @@ html, body {
     text-align: center;
 }
 
+/* Paragragh Text Styling */
+p {
+    font-size: 20px;
+    padding: 25px;
+}
 /* Picture Styling */
 img {
     max-width: 100%;
@@ -54,7 +59,7 @@ img {
     height: auto;
 }
 
-/* Footer Styling */
+/* Footer Styling */ 
 .footer {
     background-color: #333; /* Dark background */
     color: white; /* Text color */
