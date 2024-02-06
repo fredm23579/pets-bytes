@@ -12,12 +12,23 @@ As a pet parent, I want to access information about all pet-related services and
 - **Responsive Design**: Fully responsive web design, ensuring accessibility across various devices and screen sizes.
 - **Dynamic Content**: Regularly updated information to offer the latest details about pet services.
 
+## Links to Project
+
+- Repository Link:   https://github.com/fredm23579/pets-bytes/
+- Application Link:  https://fredm23579.github.io/pets-bytes/
+  
 ## Usage
 
 ### Installation
 1. Clone the repository to your local machine.
 2. Install necessary dependencies (if any).
 3. Run the application locally or deploy it using your preferred web server.
+
+## Clone
+
+```bash
+   git clone git@github.com:fredm23579/pets-bytes.git
+```
 
 ### Basic Steps:
 1. Open the web application.
@@ -51,5 +62,5 @@ For support, queries, or suggestions, please open an issue in the repository or 
 
 ---
 
-*This README was last updated on [insert date].*
->>>>>>> dde5e07204d45d2b34c2b5de84c51375c1ea8f0b
+*This README was last updated on Feb 2, 2024 @ 7:28pm.*
+
