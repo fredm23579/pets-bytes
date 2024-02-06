@@ -12,6 +12,11 @@ As a pet parent, I want to access information about all pet-related services and
 - **Responsive Design**: Fully responsive web design, ensuring accessibility across various devices and screen sizes.
 - **Dynamic Content**: Regularly updated information to offer the latest details about pet services.
 
+## Links to Project
+
+- **Repository Link:   https://github.com/fredm23579/pets-bytes/
+- **Application Link:  https://fredm23579.github.io/pets-bytes/
+  
 ## Usage
 
 ### Installation
