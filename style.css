@@ -47,16 +47,24 @@ html, body {
     text-align: center;
 }
 
+/* Header Green Styling */
+h2 {
+    background-color: rgb(55, 102, 59);
+    padding: 15px;
+}
+
 /* Paragragh Text Styling */
 p {
     font-size: 20px;
     padding: 25px;
 }
+
 /* Picture Styling */
 img {
     max-width: 100%;
     max-height: 400px;
     height: auto;
+    padding: 25px;
 }
 
 /* Footer Styling */ 
@@ -70,6 +78,10 @@ img {
 
 .footer p {
     margin: 0;
+}
+
+button {
+    background-color: rgb(55, 102, 59);
 }
 
 /* Popup Styling */
