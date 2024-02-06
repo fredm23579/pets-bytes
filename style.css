@@ -108,6 +108,7 @@ img {
     cursor: pointer;
 }
 
+/* Modal  */
 .modal {
     display: none;
     position: fixed;
