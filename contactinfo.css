@@ -53,12 +53,33 @@ html, body {
 
 }
 
+
+#h1-walker{
+    font-weight:bolder;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+   text-align: center;
+    text-decoration: underline;
+}
+
+
+#p-walker{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
 #h1-petfood{
     font-weight:bolder;
     font-family:Georgia, 'Times New Roman', Times, serif;
    text-align: center;
     text-decoration: underline;
     
+}
+
+
+
+#p-petfood{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
 }
 
 
