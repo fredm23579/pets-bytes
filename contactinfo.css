@@ -11,6 +11,8 @@ html, body {
     font-family:Georgia, 'Times New Roman', Times, serif;
    text-align: center;
     text-decoration: underline;
+
+
     
 }
 
@@ -20,6 +22,8 @@ html, body {
 #vet-info{
     font-family:Georgia, 'Times New Roman', Times, serif;
     text-align: center;
+    padding: 20px;
+    margin: 20px 0;
 }
 
 
@@ -27,9 +31,10 @@ html, body {
 
 
 #vetimg{
-    width: 600;
-    height: 900px;
-    position: relative;
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    padding: 25px;
 
 }
 
@@ -49,7 +54,9 @@ html, body {
 #p-grooming{
     font-family:Georgia, 'Times New Roman', Times, serif;
     text-align: center;
-
+    padding: 20px;
+    margin: 20px 0;
+   
 
 }
 
@@ -65,6 +72,9 @@ html, body {
 #p-walker{
     font-family:Georgia, 'Times New Roman', Times, serif;
     text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+
 }
 
 #h1-petfood{
@@ -80,6 +90,8 @@ html, body {
 #p-petfood{
     font-family:Georgia, 'Times New Roman', Times, serif;
     text-align: center;
+    padding: 20px;
+    margin: 20px 0;
 }
 
 
