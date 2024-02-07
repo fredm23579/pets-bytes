@@ -8,8 +8,7 @@
 /*   */
 html, body {
     height: 100%;
-    font-family: fantasy, copperplate;
-} 
+
 
 /* Header Styling */
 .top-bar {
@@ -98,7 +97,7 @@ button {
 }
 
 .popup.active {
-    display: block; /* Shown when active */ 
+    display: block; /* Shown when active */
 }
 
 .popup .overlay {
@@ -128,8 +127,8 @@ input[type=text] {
 
 .popup .close-btn {
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 15px;
+    top: 5px;
     font-size: 25px;
     font-weight: bold;
     cursor: pointer;

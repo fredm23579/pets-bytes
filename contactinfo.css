@@ -1,0 +1,94 @@
+html, body {
+    height: 100%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+
+#h1-vetinfo{
+    font-weight:bolder;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+   text-align: center;
+    text-decoration: underline;
+    
+}
+
+
+
+
+#vet-info{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+
+
+
+
+#vetimg{
+    width: 600;
+    height: 900px;
+    position: relative;
+
+}
+
+
+
+
+#h1-grooming{
+    font-weight:bolder;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+   text-align: center;
+    text-decoration: underline;
+    
+
+}
+
+
+#p-grooming{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+
+
+}
+
+
+#h1-walker{
+    font-weight:bolder;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+   text-align: center;
+    text-decoration: underline;
+}
+
+
+#p-walker{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+#h1-petfood{
+    font-weight:bolder;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+   text-align: center;
+    text-decoration: underline;
+    
+}
+
+
+
+#p-petfood{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+
+/* adjust img for food */
+.foodbowl{
+    width: 600;
+    height: 900px;
+    position: relative;
+
+}
+
+
