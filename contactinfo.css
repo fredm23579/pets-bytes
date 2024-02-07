@@ -53,6 +53,14 @@ html, body {
 
 }
 
+#h1-petfood{
+    font-weight:bolder;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+   text-align: center;
+    text-decoration: underline;
+    
+}
+
 
 /* adjust img for food */
 .foodbowl{
@@ -61,3 +69,5 @@ html, body {
     position: relative;
 
 }
+
+
