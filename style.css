@@ -3,12 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} 
 
+/*   */
 html, body {
     height: 100%;
-    font-family: Arial, sans-serif;
-}
+
 
 /* Header Styling */
 .top-bar {
@@ -16,7 +16,7 @@ html, body {
     color: white; /* Text color */
     padding: 10px 0;
     text-align: center;
-}
+}   
 
 /* Navigation Bar Styling */
 .nav-items {
