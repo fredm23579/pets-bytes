@@ -41,30 +41,35 @@ function setLocationManually() {
     // Code to geocode user input and set location
 }
 
-function initMap(lat, lng) {
-    var location = { lat: lat, lng: lng };
+function initMap() {
+    var ucrLocation = { lat: 33.9737, lng: -117.3281 }; // UCR location
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 8,
-        center: location
+        zoom: 14,
+        center: ucrLocation
     });
     var marker = new google.maps.Marker({
-        position: location,
+        position: ucrLocation,
         map: map
     });
 }
 
-// Function to open the modal and display the map
 function openMapModal() {
     var modal = document.getElementById("mapModal");
     modal.style.display = "block";
-    initMap(); // Initialize the map when the modal opens
 }
 
-// Function to close the modal
 function closeMapModal() {
     var modal = document.getElementById("mapModal");
     modal.style.display = "none";
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('mapButton').addEventListener('click', openMapModal);
+    var closeButtons = document.querySelectorAll('.close');
+    closeButtons.forEach(function(btn) {
+        btn.addEventListener('click', closeMapModal);
+    });
+});
 
 // Load the Google Maps script 
 function loadGoogleMaps() {
