@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Geolocation is not supported by this browser
         setDefaultLocation();
     }
+});
 
 // Function to toggle the popup modal
 function togglePopup() {
@@ -84,4 +85,4 @@ function loadDogAPI() {
     document.head.appendChild(script);
 }
 
-});
+
