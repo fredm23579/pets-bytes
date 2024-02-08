@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     var currentYear = new Date().getFullYear();
     document.getElementById('current-year').textContent = currentYear;
-     if (navigator.geolocation) {
+    
+    // Load the Google Maps API asynchronously only once
+    if (!window.google || !window.google.maps) {
+        loadGoogleMaps();
+    }
+    
+    if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
         // Geolocation is not supported by this browser
@@ -74,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load the Google Maps script 
 function loadGoogleMaps() {
     var script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyB4YKm_hLUi2yFsXf4i3XwS8kOKgp-wInY&callback=initMap`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap`;
     script.defer = true;
     script.async = true;
     document.head.appendChild(script);
