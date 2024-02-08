@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     var currentYear = new Date().getFullYear();
     document.getElementById('current-year').textContent = currentYear;
+     if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        // Geolocation is not supported by this browser
+        setDefaultLocation();
+    }
 });
 
 // Function to toggle the popup modal
@@ -9,14 +15,6 @@ function togglePopup() {
     popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
 }
 // Google Maps Modal Code ******************************************************
- // Try to get user's current location
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-        // Geolocation is not supported by this browser
-        setDefaultLocation();
-    }
-
 
 function showPosition(position) {
     // Use position.coords.latitude & position.coords.longitude
