@@ -16,7 +16,7 @@ function togglePopup() {
         // Geolocation is not supported by this browser
         setDefaultLocation();
     }
-});
+
 
 function showPosition(position) {
     // Use position.coords.latitude & position.coords.longitude
