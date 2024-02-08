@@ -30,7 +30,7 @@ html, body {
 
 
 
-#vetimg{
+.vetimg{
     max-width: 100%;
     max-height: 400px;
     height: auto;
@@ -60,6 +60,14 @@ html, body {
 
 }
 
+.catbath{
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    padding: 25px;
+
+}
+
 
 #h1-walker{
     font-weight:bolder;
@@ -75,6 +83,14 @@ html, body {
     padding: 20px;
     margin: 20px 0;
 
+}
+
+
+.dogwalker{
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    padding: 25px;
 }
 
 #h1-petfood{
