@@ -55,7 +55,7 @@ The application harnesses the power of the Google Maps JavaScript API to offer l
   - [Facebook Profile Image](https://www.facebook.com/profile.php?id=61556419702881&mibextid=LQQJ4d)
   - [Fear Free Happy Homes Image](https://www.fearfreehappyhomes.com/wp-content/uploads/2021/03/bigstock-Young-Woman-Taking-Photo-Of-Cu-374979739.jpg)
   - [Random Image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LrToBEtSXKSw20rqoDtiyFCe2QvPhP2MFg&usqp=CAU)
- - [DogAPI] (https://dogapi.dog/terms)
+
 
 ## License
 This project is licensed under the [MIT License](LICENSE). See the LICENSE file for more details.
