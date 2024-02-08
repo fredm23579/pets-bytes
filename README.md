@@ -3,7 +3,7 @@
 ## 🌟 Project Overview
 Pets-Bytes is an advanced, user-friendly web application tailored for pet owners. It focuses on simplifying the task of locating nearby pet-related services, including veterinarians, pet stores, grooming services, and more. Our mission is to ensure that pet owners have quick and easy access to essential services for their beloved pets.
 
-## 📝 Description
+## 📝 Description 
 Pets-Bytes is more than just a web application; it's a comprehensive solution for pet owners seeking convenience and peace of mind. In today's fast-paced world, finding reliable and nearby pet care services can be time-consuming. Pets-Bytes addresses this challenge by integrating cutting-edge technology with a user-centric design. 
 
 The application harnesses the power of the Google Maps JavaScript API to offer location-based search functionality, allowing users to find the nearest veterinarians, pet stores, grooming centers, and other essential pet services. With its responsive and intuitive interface, Pets-Bytes ensures that the information you need is just a few clicks away, regardless of the device you're using. Whether you're at home or on the go, Pets-Bytes is your trusted companion for all your pet care needs.
@@ -55,21 +55,14 @@ The application harnesses the power of the Google Maps JavaScript API to offer l
 - Additional images and resources:
   
   - [Facebook Profile Image](https://www.facebook.com/profile.php?id=61556419702881&mibextid=LQQJ4d)
-  
   - [Fear Free Happy Homes Image](https://www.fearfreehappyhomes.com/wp-content/uploads/2021/03/bigstock-Young-Woman-Taking-Photo-Of-Cu-374979739.jpg)
- 
   - [Random Image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LrToBEtSXKSw20rqoDtiyFCe2QvPhP2MFg&usqp=CAU)
-<<<<<<< HEAD
- 
- - [PoweredByStratonautsDogAPI] (https://dogapi.dog/terms)
-=======
+  - [PoweredByStratonautsDogAPI] (https://dogapi.dog/terms)
   - [DogAPI] (https://dogapi.dog/terms)
   - [Dog Doctor](https://img.freepik.com/free-vector/cute-dog-doctor-with-stethoscope-cartoon-vector-icon-illustration-animal-healthcare-icon-isolated_138676-5182.jpg?size=626&ext=jpg&ga=GA1.2.243159164.1707266342&semt=ais)
   - [Cat getting ready to shower](https://assets3.thrillist.com/v1/image/3059921/1584x832/scale;webp=auto;jpeg_quality=60;progressive.jpg)
   - [Lady Walking Her Dog](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSzxdNpR31Chfeg38hWzWICEPBWIS88yD0Ew&usqp=CAU)
   - [Pet Food Img](https://media.istockphoto.com/id/1368129686/vector/pets-with-bowl-food.jpg?s=612x612&w=0&k=20&c=9vV5CZjdchE_w-n0BUt62s_CAVP3Fg_YTT5kNDqTTZA=)
-
->>>>>>> dbb2d41d3275e7d07bc206d19967f9861eb46c72
 
 ## License
 This project is licensed under the [MIT License](LICENSE). See the LICENSE file for more details.
