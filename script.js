@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load the Google Maps script 
 function loadGoogleMaps() {
     var script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyB4YKm_hLUi2yFsXf4i3XwS8kOKgp-wInY&callback=initMap`;
     script.defer = true;
     script.async = true;
     document.head.appendChild(script);
