@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     var currentYear = new Date().getFullYear();
     document.getElementById('current-year').textContent = currentYear;
-     if (navigator.geolocation) {
+    
+    // Load the Google Maps API asynchronously only once
+    if (!window.google || !window.google.maps) {
+        loadGoogleMaps();
+    }
+    
+    if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
         // Geolocation is not supported by this browser
