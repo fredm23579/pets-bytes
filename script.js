@@ -46,4 +46,10 @@ function loadGoogleMaps() {
 document.addEventListener('DOMContentLoaded', loadGoogleMaps);
 // *****************************************************************************
 
+// Dog API for Code // 
+function loadDogAPI() {
+    var script = document.createElement ('script');
+    script.src = `https://dogapi.dog/api/v2/breeds`;
+    document.head.appendChild(script);
+}
 
