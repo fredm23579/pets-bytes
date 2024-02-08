@@ -9,8 +9,42 @@ function togglePopup() {
     popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
 }
 // Google Maps Modal Code ******************************************************
-function initMap() {
-    var location = { lat: -34.397, lng: 150.644 }; // Default location
+ // Try to get user's current location
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        // Geolocation is not supported by this browser
+        setDefaultLocation();
+    }
+});
+
+function showPosition(position) {
+    // Use position.coords.latitude & position.coords.longitude
+    initMap(position.coords.latitude, position.coords.longitude);
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            // User denied the request for Geolocation
+            setDefaultLocation();
+            break;
+        // Handle other error cases
+    }
+}
+
+function setDefaultLocation() {
+    // Default location - UCR in Riverside, CA
+    initMap(33.9737, -117.3281); // Latitude and Longitude of UCR
+}
+
+function setLocationManually() {
+    var userInput = document.getElementById('locationInput').value;
+    // Code to geocode user input and set location
+}
+
+function initMap(lat, lng) {
+    var location = { lat: lat, lng: lng };
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 8,
         center: location
