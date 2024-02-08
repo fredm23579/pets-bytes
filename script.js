@@ -84,4 +84,11 @@ function loadDogAPI() {
     document.head.appendChild(script);
 }
 
+// Cat API Code // 
+function loadCatAPI() {
+    var script = document.createElement ('script');
+    script.src = `api_key=live_jagmaJUduCuXhbOEdM3zaXvwF23VZhrs6cA5u9KoZaPhBmXvnZEmRgu5VV31fAkE`
+    document.head.appendChild(script);
+}
+
 });
