@@ -55,8 +55,6 @@ The application harnesses the power of the Google Maps JavaScript API to offer l
   - [Facebook Profile Image](https://www.facebook.com/profile.php?id=61556419702881&mibextid=LQQJ4d)
   - [Fear Free Happy Homes Image](https://www.fearfreehappyhomes.com/wp-content/uploads/2021/03/bigstock-Young-Woman-Taking-Photo-Of-Cu-374979739.jpg)
   - [Random Image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LrToBEtSXKSw20rqoDtiyFCe2QvPhP2MFg&usqp=CAU)
-  -[Dog Doctor img](https://img.freepik.com/free-vector/cute-dog-doctor-with-stethoscope-cartoon-vector-icon-illustration-animal-healthcare-icon-isolated_138676-5182.jpg?size=626&ext=jpg&ga=GA1.2.243159164.1707266342&semt=ais)
-  
 
 
 ## License
