@@ -19,26 +19,30 @@
 html, body {
     height: 100%;
     font-family:Verdana, Geneva, Tahoma, sans-serif; 
-}
-
-html, body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
 body {
-    position: relative; /* Ensures relative positioning for the footer */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /* This ensures that the main content takes up the space it needs */
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px 0;
+}
+
+body {
+    position: relative; /* Ensures relative positioning for the footer */
 }
 
 /* Header Styling */
@@ -105,13 +109,16 @@ img {
     text-align: center;
     padding: 20px 0;
     margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
 }
 
-.footer p {
-    margin: 0;
-}
-
-button {
+.button {
     background-color: rgb(55, 102, 59);
 }
 
