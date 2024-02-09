@@ -39,6 +39,10 @@ main {
     color: white;
     text-align: center;
     padding: 20px 0;
+    margin-top: auto;
+    position: relative; /* Ensures that the footer stays at the bottom of the page */
+    bottom: 0;
+    width: 100%;
 }
 
 body {
@@ -109,7 +113,7 @@ img {
     text-align: center;
     padding: 20px 0;
     margin-top: auto;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     background-color: #333;
@@ -134,7 +138,7 @@ img {
     background: rgba(0, 0, 0, 0.6);
 }
 
-.popup.active {
+.popup::active {
     display: block; /* Shown when active */
 }
 
