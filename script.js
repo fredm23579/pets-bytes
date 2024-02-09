@@ -99,7 +99,7 @@ function loadDogAPI() {
 // Cat API Code // 
 function loadCatAPI() {
     var script = document.createElement ('script');
-    script.src = `api_key=live_jagmaJUduCuXhbOEdM3zaXvwF23VZhrs6cA5u9KoZaPhBmXvnZEmRgu5VV31fAkE`
+    script.src = `https://api.thecatapi.com/v1/breeds`
     document.head.appendChild(script);
 }
 
