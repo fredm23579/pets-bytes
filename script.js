@@ -175,7 +175,7 @@ function initMap(latitude, longitude) {
     var request = {
         location: userLocation,
         radius: '5000',
-        type: ['veterinary_care', 'pet_store', 'store']
+        type: ['veterinary care', 'pet store', 'cat store', 'pets', 'dog store', 'dog walking', 'pet groomer', 'dog boarding', 'pet sitter', 'dog boarding', 'pet sitting', 'animal hospital', 'pet boarding']
     };
 
     var service = new google.maps.places.PlacesService(map);
