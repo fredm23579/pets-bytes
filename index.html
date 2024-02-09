@@ -56,6 +56,19 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LrToBEtSXKSw20rqoDtiyFCe2QvPhP2MFg&usqp=CAU" alt="Two Kitties" class="float-center" />
             <p>Access to the vet options we offer as well as pet grooming and sitters for everyone to use.</p>
         </section>
+
+        <!-- Cat API function -->
+        <select onchange="showBreedImage(value)"
+        name="breed_selector" id="breed_selector">
+        </select>
+        <div>
+            <a id="wiki_link" target="blank"></a>
+            <div id="breed_json"></div>
+        </div>
+        <div>
+            <img id="breed_image"></img>
+        </div>
+
         
         <section id="map" class="content">
             <h2>Find Services on Map</h2>
