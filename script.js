@@ -26,8 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
         informUserGeolocationUnsupported();
         setDefaultLocation();
     }
-});
-
 function informUserGeolocationUnsupported() {
     alert("Geolocation is not supported by this browser. Please enter your location manually.");
 }
@@ -64,7 +62,7 @@ function ipLookupOrManualEntry() {
 }
 
 function geocodeLocation(location) {
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(location)}&key=YOUR_API_KEY`)
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(location)}&key=AIzaSyB4YKm_hLUi2yFsXf4i3XwS8kOKgp-wInY`)
         .then(response => response.json())
         .then(data => {
             const { lat, lng } = data.results[0].geometry.location;
@@ -116,7 +114,7 @@ function closeMapModal() {
 
 function loadGoogleMaps() {
     var script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=getUserLocation&libraries=places`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyB4YKm_hLUi2yFsXf4i3XwS8kOKgp-wInY&callback=getUserLocation&libraries=places`;
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);
