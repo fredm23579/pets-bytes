@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     setYearAndLoadMaps();
 
-    // Event listener for map button and close buttons
     document.getElementById('mapButton').addEventListener('click', openMapModal);
     var closeButtons = document.querySelectorAll('.close');
     closeButtons.forEach(function(btn) {
         btn.addEventListener('click', closeMapModal);
     });
 
-    // Additional event listeners for closing modal
     window.addEventListener('click', function(event) {
         var modal = document.getElementById('mapModal');
         if (event.target === modal) {
@@ -28,94 +26,60 @@ document.addEventListener('DOMContentLoaded', function() {
         informUserGeolocationUnsupported();
         setDefaultLocation();
     }
-
 });
 
 function informUserGeolocationUnsupported() {
-    // Inform the user that their browser does not support Geolocation
     alert("Geolocation is not supported by this browser. Please enter your location manually.");
-
 }
 
 function setDefaultLocation() {
-    // Default to New York City as an example
     initMap(40.7128, -74.0060);
 }
 
 function showError(error) {
     switch(error.code) {
         case error.PERMISSION_DENIED:
-            // User denied the Geolocation request
             ipLookupOrManualEntry();
             break;
         case error.POSITION_UNAVAILABLE:
-            // Location information is unavailable
             ipLookupOrManualEntry();
             break;
         case error.TIMEOUT:
-            // The request to get user location timed out
             ipLookupOrManualEntry();
             break;
         case error.UNKNOWN_ERROR:
-            // An unknown error occurred
             ipLookupOrManualEntry();
             break;
     }
 }
 
 function ipLookupOrManualEntry() {
-    // Placeholder for IP address lookup integration
-    // Implement IP address lookup using a service like ipinfo.io
-
-    // For actual implementation, integrate with a service like IPinfo
-    // and use the response to set the default location
-    // Example: initMap(ipinfoResponse.latitude, ipinfoResponse.longitude);
-
     alert("We are unable to access your location. Please enter your location manually.");
-
-    // Show a prompt to allow manual location entry
     var manualLocation = prompt("Please enter your city or postal code:");
     if (manualLocation) {
-        // Use geocoding to convert the manual location to coordinates
         geocodeLocation(manualLocation);
     } else {
-        // Fallback to default location if no input is given
         setDefaultLocation();
     }
 }
 
 function geocodeLocation(location) {
-    // Placeholder for geocoding implementation
-    // Implement geocoding using a service like Google Geocoding API
-    // and use the response to set the default location
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(location)}&key=AIzaSyB4YKm_hLUi2yFsXf4i3XwS8kOKgp-wInY`)
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(location)}&key=YOUR_API_KEY`)
         .then(response => response.json())
         .then(data => {
-            // Extract the latitude and longitude from the response
             const { lat, lng } = data.results[0].geometry.location;
-
-            // Call the initMap function with the obtained coordinates
             initMap(lat, lng);
         })
         .catch(error => {
             console.error('Error geocoding location:', error);
-            // Fallback to default location if geocoding fails
             setDefaultLocation();
         });
-    }
-
-    console.log("Geocoding the location: " + location);
-    // After geocoding, call initMap with the obtained coordinates
-    // Example: initMap(geocodedLatitude, geocodedLongitude);
-    // Example: initMap(latitude, longitude);
-    // Example: initMap(latitude, longitude, mapOptions);
+}
 
 function setYearAndLoadMaps() {
-    // Set current year
     var currentYear = new Date().getFullYear();
     document.getElementById('current-year').textContent = currentYear;
 
-    // Load Google Maps only once
     if (typeof google === 'undefined' || typeof google.maps === 'undefined') {
         loadGoogleMaps();
     } else {
@@ -127,7 +91,6 @@ function getUserLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, handleLocationError);
     } else {
-        // Geolocation is not supported by this browser
         setDefaultLocation();
     }
 }
@@ -139,11 +102,6 @@ function showPosition(position) {
 function handleLocationError(error) {
     console.warn(`ERROR(${error.code}): ${error.message}`);
     setDefaultLocation();
-}
-
-function setDefaultLocation() {
-    // Default location - Update with your default coordinates
-    initMap(33.9737, -117.3281);
 }
 
 function openMapModal() {
@@ -158,7 +116,7 @@ function closeMapModal() {
 
 function loadGoogleMaps() {
     var script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyB4YKm_hLUi2yFsXf4i3XwS8kOKgp-wInY&callback=getUserLocation&libraries=places`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=getUserLocation&libraries=places`;
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);
@@ -171,26 +129,34 @@ function initMap(latitude, longitude) {
         center: userLocation
     });
 
-    // Code for displaying nearby pet-related services...
+    displayNearbyPetServices(map, userLocation);
+}
+
+function displayNearbyPetServices(map, userLocation) {
     var request = {
         location: userLocation,
         radius: '5000',
-        type: ['veterinary care', 'pet store', 'cat store', 'pets', 'dog store', 'dog walking', 'pet groomer', 'dog boarding', 'pet sitter', 'dog boarding', 'pet sitting', 'animal hospital', 'pet boarding']
+        type: ['veterinary_care', 'pet_store', 'animal_hospital']
     };
 
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, function(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             results.forEach(function(place) {
-                new google.maps.Marker({
-                    position: place.geometry.location,
-                    map: map
-                });
+                createMarker(place, map);
             });
         }
     });
 }
-// Toggle Popup
+
+function createMarker(place, map) {
+    new google.maps.Marker({
+        position: place.geometry.location,
+        map: map,
+        title: place.name
+    });
+}
+
 function togglePopup() {
     var popup = document.getElementById("popup-1");
     popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
