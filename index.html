@@ -83,24 +83,29 @@
         </section>
 
         <!-- Profile Section -->
-        <section id="profile" class="content">
-            <h2>Add Your Pet's Profile</h2>
-            <button id="toggleButton">Add Pet Profile Here</button>
-               <!-- Popup for Adding Pet Profile -->
-           <div class="popup" id="popup-1">
-            <div class="overlay"></div>
-            <div class="content">
-                <div class="close-btn" onclick="togglePopup()">&times;</div>
-                <form id="petProfileForm">
+<section id="profile" class="content">
+    <h2>Add Your Pet's Profile</h2>
+    <button id="toggleButton" aria-controls="popup-1" aria-expanded="false">Add Pet Profile Here</button>
+    <!-- Popup for Adding Pet Profile -->
+    <div class="popup" id="popup-1" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="content">
+            <button class="close-btn" aria-label="Close">✖</button>
+            <form id="petProfileForm">
+                <div class="form-group">
                     <label for="petName">Pet's Name</label>
-                    <input type="text" id="petName" placeholder="Pet's Name" required>
+                    <input type="text" id="petName" name="petName" placeholder="Pet's Name" required>
+                </div>
+                <div class="form-group">
                     <label for="petBreed">Pet's Breed</label>
-                    <input type="text" id="petBreed" placeholder="Pet's Breed" required>
-                    <button type="submit" class="button">Save Profile</button>
-                </form>
-            </div>
-           </div>    
-        </section>
+                    <input type="text" id="petBreed" name="petBreed" placeholder="Pet's Breed" required>
+                </div>
+                <button type="submit" class="button">Save Profile</button>
+            </form>
+        </div>
+    </div>
+</section>
+
     
     </main>
 
