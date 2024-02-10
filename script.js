@@ -130,8 +130,12 @@ function closeMapModal() {
 }
 
 function loadGoogleMaps() {
+    if (document.querySelector('script[src*="maps.googleapis.com/maps/api/js"]')) {
+        return; // Already loaded
+    }
+
     var script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCBPvVB1Aj1_iy_Zs1s3lsZq9E2Ky9eMjc&callback=getUserLocation&libraries=places`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCBPvVB1Aj1_iy_Zs1s3lsZq9E2Ky9eMjc&callback=initMap&libraries=places`;
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);
