@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setYearAndLoadMaps();
 
     document.getElementById('mapButton').addEventListener('click', openMapModal);
-    var closeButtons = document.querySelectorAll('.close');
+    var closeButtons = document.querySelectorAll('close');
     closeButtons.forEach(function(btn) {
         btn.addEventListener('click', closeMapModal);
     });
@@ -217,4 +217,4 @@ function showBreedImage(index)
   document.getElementById("wiki_link").href= storedBreeds[index].wikipedia_url
   document.getElementById("wiki_link").innerHTML= storedBreeds[index].wikipedia_url
 }
-
+}
