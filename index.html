@@ -30,81 +30,88 @@
         <!-- Home Section -->
         <section id="home" class="content">
             <h2>Welcome to Pet's Bytes!</h2>
-            <img src="https://inspirationseek.com/wp-content/uploads/2016/02/Cute-Dog-Photo.jpg" alt="Cute Dog" class="float-center" />
+            <img src="https://inspirationseek.com/wp-content/uploads/2016/02/Cute-Dog-Photo.jpg" alt="Cute Dog" class="float-center" loading="lazy" />
             <p>Welcome to our pet friendly webpage where you can find all that we have to offer our furry family animals!</p>
         </section>
 
-        <!-- About Section -->
+       <!-- About Section -->
         <section id="about" class="content">
             <h2>About Us</h2>
-            <img src="https://4.bp.blogspot.com/-qIK-2jm1Dp8/UeN7c4y-kxI/AAAAAAAAD6w/mgpYJ2labWg/s1600/Cute-Cat-Facts.jpg" alt="Cute Cat" class="float-center" />
-            <p>We are a pet care website that offers a variety of services to dogs, puppies, kitties, and cats to help you find care for your loved ones. Many of the amenities that we offer including locating veterinarians, pet sitters, dog walking, and pet grooming that you can find located near you.</p>
-            
+            <img src="https://4.bp.blogspot.com/-qIK-2jm1Dp8/UeN7c4y-kxI/AAAAAAAAD6w/mgpYJ2labWg/s1600/Cute-Cat-Facts.jpg" alt="Cute Cat" class="float-center" loading="lazy"/>
+            <p>We are a pet care website that offers a variety of services to dogs, puppies, kitties, and cats to help you find care for your loved ones. Many of the amenities that we offer include locating veterinarians, pet sitters, dog walking, and pet grooming that you can find located near you.</p>
+    
             <!-- Cat API function -->            
-            <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector" title="cat breed selector">
+            <label for="breed_selector">Choose a Cat Breed:</label>
+            <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector" title="Cat breed selector">
+                <!-- Options will be dynamically populated -->
             </select>
             <div>
-                <a id="wiki_link" target="blank"></a>
+                <a id="wiki_link" href="#" target="_blank">Learn more</a>
                 <div id="breed_json"></div>
             </div>
             <div>
-                <img id="breed_image" alt="cat breed image"></img>
+                <img id="breed_image" alt="Selected cat breed image" loading="lazy"/>
             </div>
         </section>
+
 
         <!-- Contact Section -->
         <section id="contact" class="content">
             <h2>Contact Us</h2>
-            <img href="contactinfo.html" src="https://www.fearfreehappyhomes.com/wp-content/uploads/2021/03/bigstock-Young-Woman-Taking-Photo-Of-Cu-374979739.jpg" alt="Dog Call" class="float-center" />
+            <a href="contactinfo.html">
+                <img src="https://www.fearfreehappyhomes.com/wp-content/uploads/2021/03/bigstock-Young-Woman-Taking-Photo-Of-Cu-374979739.jpg" alt="Dog Call" class="float-center" />
+            </a>
             <p>Here you will find links to phone numbers, emails, and other contact information for our different services.</p>
-            <a href="contactinfo.html">Contact info link</a>
+            <a href="contactinfo.html" aria-label="View Contact Information">Contact info link</a>
         </section>
 
         <!-- Services Section -->
         <section id="services" class="content">
             <h2>Our Services</h2>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LrToBEtSXKSw20rqoDtiyFCe2QvPhP2MFg&usqp=CAU" alt="Two Kitties" class="float-center" />
-            <p>Access to the vet options we offer as well as pet grooming and sitters for everyone to use.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LrToBEtSXKSw20rqoDtiyFCe2QvPhP2MFg&usqp=CAU" alt="Professional Pet Care Services" class="float-center" />
+            <p>Explore our comprehensive range of pet care services including veterinary care, pet grooming, and professional pet sitters. Catering to all your pet's needs under one roof.</p>
+            <a href="services.html" class="button">View Our Services</a>
         </section>
          
         <!-- Google Maps API section -->
         <section id="mapSection" class="content">
             <h2>Find Services on Map</h2>
-                <!-- Button to Open the Map Modal -->
-                <button id="mapButton">View Map</button>
-                <!-- Map Modal -->
-                <div id="mapModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <h2>Find Services on Map</h2>
-                        <div id="map"></div> <!-- Container for Google Map -->
-                    </div>
+            <!-- Button to Open the Map Modal -->
+            <button id="mapButton" aria-label="Open Map">View Map</button>
+            <!-- Map Modal -->
+            <div id="mapModal" class="modal" aria-hidden="true">
+                <div class="modal-content">
+                    <button class="close" aria-label="Close Map">&times;</button>
+                    <h2>Find Services on Map</h2>
+                    <p>Use the map to locate pet services near you.</p>
+                    <div id="map"></div> <!-- Container for Google Map -->
                 </div>
+            </div>
         </section>
-
+        
         <!-- Profile Section -->
-<section id="profile" class="content">
-    <h2>Add Your Pet's Profile</h2>
-    <button id="toggleButton" aria-controls="popup-1" aria-expanded="false">Add Pet Profile Here</button>
-    <!-- Popup for Adding Pet Profile -->
-    <div class="popup" id="popup-1" aria-hidden="true">
-        <div class="overlay"></div>
-        <div class="content">
-            <button class="close-btn" aria-label="Close">✖</button>
-            <form id="petProfileForm">
-                <div class="form-group">
-                    <label for="petName">Pet's Name</label>
-                    <input type="text" id="petName" name="petName" placeholder="Pet's Name" required>
+        <section id="profile" class="content">
+            <h2>Add Your Pet's Profile</h2>
+            <button id="toggleButton" aria-controls="popup-1" aria-expanded="false">Add Pet Profile Here</button>
+            <!-- Popup for Adding Pet Profile -->
+            <div class="popup" id="popup-1" aria-hidden="true">
+                <div class="overlay"></div>
+                <div class="content">
+                    <button class="close-btn" aria-label="Close">✖</button>
+                    <form id="petProfileForm">
+                        <div class="form-group">
+                            <label for="petName">Pet's Name</label>
+                            <input type="text" id="petName" name="petName" placeholder="Pet's Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="petBreed">Pet's Breed</label>
+                            <input type="text" id="petBreed" name="petBreed" placeholder="Pet's Breed" required>
+                        </div>
+                        <button type="submit" class="button">Save Profile</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="petBreed">Pet's Breed</label>
-                    <input type="text" id="petBreed" name="petBreed" placeholder="Pet's Breed" required>
-                </div>
-                <button type="submit" class="button">Save Profile</button>
-            </form>
-        </div>
-    </div>
-</section>
+            </div>
+        </section>
 
     
     </main>
