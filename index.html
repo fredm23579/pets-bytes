@@ -81,6 +81,13 @@
             <!-- Map Modal -->
             <div id="mapModal" class="modal" aria-hidden="true">
                 <div class="modal-content">
+                    <select id="serviceType">
+                        <option value="veterinary_care">Veterinary Care</option>
+                        <option value="pet_store">Pet Store</option>
+                        <option value="animal_hospital">Animal Hospital</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                    <button onclick="findNearbyServices()">Find Services</button>
                     <button class="close" aria-label="Close Map">&times;</button>
                     <h2>Find Services on Map</h2>
                     <p>Use the map to locate pet services near you.</p>
