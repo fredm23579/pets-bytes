@@ -232,6 +232,13 @@ input[type=text] {
     background-color: var(--hover-color);
 }
 
+#servicesList {
+    margin-top: 20px;
+    overflow-y: auto;
+    max-height: 300px; /* Adjust as needed */
+}
+
+
 /* Media Queries */
 @media (max-width: 768px) {
     .nav-items {
