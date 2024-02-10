@@ -122,6 +122,7 @@ function handleLocationError(error) {
 function openMapModal() {
     var modal = document.getElementById("mapModal");
     modal.style.display = "block";
+    showPosition(getUserLocation());
 }
 
 function closeMapModal() {
