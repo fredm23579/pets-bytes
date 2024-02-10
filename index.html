@@ -39,6 +39,17 @@
             <h2>About Us</h2>
             <img src="https://4.bp.blogspot.com/-qIK-2jm1Dp8/UeN7c4y-kxI/AAAAAAAAD6w/mgpYJ2labWg/s1600/Cute-Cat-Facts.jpg" alt="Cute Cat" class="float-center" />
             <p>We are a pet care website that offers a variety of services to dogs, puppies, kitties, and cats to help you find care for your loved ones. Many of the amenities that we offer including locating veterinarians, pet sitters, dog walking, and pet grooming that you can find located near you.</p>
+            
+            <!-- Cat API function -->            
+            <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector" title="cat breed selector">
+            </select>
+            <div>
+                <a id="wiki_link" target="blank"></a>
+                <div id="breed_json"></div>
+            </div>
+            <div>
+                <img id="breed_image" alt="cat breed image"></img>
+            </div>
         </section>
 
         <!-- Contact Section -->
@@ -55,21 +66,9 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LrToBEtSXKSw20rqoDtiyFCe2QvPhP2MFg&usqp=CAU" alt="Two Kitties" class="float-center" />
             <p>Access to the vet options we offer as well as pet grooming and sitters for everyone to use.</p>
         </section>
-
-        <!-- Cat API function -->
-        <select onchange="showBreedImage(value)"
-        name="breed_selector" id="breed_selector">
-        </select>
-        <div>
-            <a id="wiki_link" target="blank"></a>
-            <div id="breed_json"></div>
-        </div>
-        <div>
-            <img id="breed_image"></img>
-        </div>
-
-        
-        <section id="map" class="content">
+         
+        <!-- Google Maps API section -->
+        <section id="mapSection" class="content">
             <h2>Find Services on Map</h2>
                 <!-- Button to Open the Map Modal -->
                 <button id="mapButton" onclick="openMapModal()">View Map</button>
@@ -77,6 +76,7 @@
                 <div id="mapModal" class="modal">
                     <div class="modal-content">
                         <span class="close" onclick="closeMapModal()">&times;</span>
+                        <h2>Find Services on Map</h2>
                         <div id="map"></div> <!-- Container for Google Map -->
                     </div>
                 </div>
