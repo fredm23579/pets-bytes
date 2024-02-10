@@ -32,6 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    var closeButtons = document.querySelectorAll('.close'); // Use .close for class
+    closeButtons.forEach(function(btn) {
+        btn.addEventListener('click', closeMapModal);
+    });
+
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
