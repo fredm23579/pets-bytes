@@ -152,31 +152,47 @@ function initMap(latitude, longitude) {
     displayNearbyPetServices(map, userLocation);
 }
 
-function displayNearbyPetServices(map, userLocation) {
+function findNearbyServices() {
+    var selectedType = document.getElementById('serviceType').value;
     var request = {
-        location: userLocation,
-        radius: '5000',
-        type: ['veterinary_care', 'pet_store', 'animal_hospital']
+        location: userLocation, // Define userLocation globally after geolocation
+        radius: '5000', // Adjust radius as needed
+        type: [selectedType]
     };
 
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, function(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
+            clearMarkers();
+            clearList();
             results.forEach(function(place) {
-                createMarker(place, map);
+                createMarker(place);
+                addToList(place);
             });
         }
     });
 }
+var markers = [];
 
-function createMarker(place, map) {
-    new google.maps.Marker({
-        position: place.geometry.location,
+function createMarker(place) {
+    var marker = new google.maps.Marker({
         map: map,
-        title: place.name
+        position: place.geometry.location
     });
+    markers.push(marker);
 }
 
+function addToList(place) {
+    var list = document.getElementById('servicesList');
+    var entry = document.createElement('div');
+    entry.innerHTML = `<strong>${place.name}</strong><br>${place.vicinity}`;
+    list.appendChild(entry);
+}
+function clearList() {
+    var list = document.getElementById('servicesList');
+    list.innerHTML = '';
+}
+//*****************************************************************************
 function togglePopup() {
     var popup = document.getElementById("popup-1");
     popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
