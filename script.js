@@ -229,4 +229,4 @@ function showBreedImage(index)
   document.getElementById("wiki_link").href= storedBreeds[index].wikipedia_url
   document.getElementById("wiki_link").innerHTML= storedBreeds[index].wikipedia_url
 }
-}
+});
