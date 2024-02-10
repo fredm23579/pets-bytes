@@ -7,6 +7,18 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.addEventListener('click', closeMapModal);
     });
 
+    // Event listener for opening the map modal
+    var mapButton = document.getElementById('mapButton');
+    if (mapButton) {
+        mapButton.addEventListener('click', openMapModal);
+    }
+
+    // Event listener for toggling the popup
+    var toggleButton = document.getElementById('toggleButton');
+    if (toggleButton) {
+        toggleButton.addEventListener('click', togglePopup);
+    }
+    
     window.addEventListener('click', function(event) {
         var modal = document.getElementById('mapModal');
         if (event.target === modal) {
