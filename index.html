@@ -71,11 +71,11 @@
         <section id="mapSection" class="content">
             <h2>Find Services on Map</h2>
                 <!-- Button to Open the Map Modal -->
-                <button id="mapButton" onclick="openMapModal()">View Map</button>
+                <button id="mapButton">View Map</button>
                 <!-- Map Modal -->
                 <div id="mapModal" class="modal">
                     <div class="modal-content">
-                        <span class="close" onclick="closeMapModal()">&times;</span>
+                        <span class="close">&times;</span>
                         <h2>Find Services on Map</h2>
                         <div id="map"></div> <!-- Container for Google Map -->
                     </div>
@@ -85,7 +85,7 @@
         <!-- Profile Section -->
         <section id="profile" class="content">
             <h2>Add Your Pet's Profile</h2>
-            <button onclick="togglePopup()">Add Pet Profile Here</button>
+            <button id="toggleButton">Add Pet Profile Here</button>
                <!-- Popup for Adding Pet Profile -->
            <div class="popup" id="popup-1">
             <div class="overlay"></div>
