@@ -5,6 +5,15 @@ var markers = []; // Global markers array
 document.addEventListener('DOMContentLoaded', function() {
     setYearAndLoadMaps();
 
+    var findServicesButton = document.getElementById('findServicesButton');
+    if (findServicesButton) {
+        findServicesButton.addEventListener('click', function() {
+            var selectedType = document.getElementById('serviceType').value;
+            findNearbyServices(selectedType);
+        });
+    }
+
+    
     document.getElementById('mapButton').addEventListener('click', openMapModal);
     var closeButtons = document.querySelectorAll('close');
     closeButtons.forEach(function(btn) {
@@ -173,12 +182,17 @@ function displayNearbyPetServices(map, userLocation) {
         }
     });
 }
-function findNearbyServices() {
-    var selectedType = document.getElementById('serviceType').value;
+
+function findNearbyServices(serviceType) {
+    if (!map) {
+        console.error('Map is not initialized');
+        return;
+    }
+
     var request = {
-        location: userLocation, // Define userLocation globally after geolocation
-        radius: '5000', // Adjust radius as needed
-        type: [selectedType]
+        location: map.getCenter(),
+        radius: '5000', // Adjust the radius as needed
+        type: [serviceType]
     };
 
     var service = new google.maps.places.PlacesService(map);
@@ -193,6 +207,34 @@ function findNearbyServices() {
         }
     });
 }
+
+function createMarker(place) {
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+    });
+    markers.push(marker);
+}
+
+function addToList(place) {
+    var list = document.getElementById('servicesList');
+    var entry = document.createElement('div');
+    entry.innerHTML = `<strong>${place.name}</strong><br>${place.vicinity}`;
+    list.appendChild(entry);
+}
+
+function clearMarkers() {
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+    }
+    markers = [];
+}
+
+function clearList() {
+    var list = document.getElementById('servicesList');
+    list.innerHTML = '';
+}
+
 //var markers = [];
 function createMarker(place) {
     var marker = new google.maps.Marker({
