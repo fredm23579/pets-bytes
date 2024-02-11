@@ -157,7 +157,22 @@ function initMap(latitude, longitude) {
     
     displayNearbyPetServices(map, userLocation);
 }
+function displayNearbyPetServices(map, userLocation) {
+    var request = {
+        location: userLocation,
+        radius: '5000',
+        type: ['veterinary_care', 'pet_store', 'animal_hospital']
+    };
 
+    var service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, function(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            results.forEach(function(place) {
+                createMarker(place, map);
+            });
+        }
+    });
+}
 function findNearbyServices() {
     var selectedType = document.getElementById('serviceType').value;
     var request = {
