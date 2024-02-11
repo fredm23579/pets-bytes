@@ -209,6 +209,22 @@ input[type=text] {
     background-color: var(--hover-color);
 }
 
+#mapSection {
+    display: flex;
+}
+
+#servicesList {
+    flex: 1;
+    overflow-y: auto; /* For scrollable list */
+    height: 400px; /* Same as map height */
+    margin-right: 20px; /* Spacing between list and map */
+}
+
+#map {
+    flex: 2;
+    height: 400px;
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .nav-items {
