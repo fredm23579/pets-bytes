@@ -2,7 +2,7 @@ var map; // Global map variable
 var userLocation; // Global user location variable
 var markers = []; // Global markers array
 
-document.addEventListener('DOMContentLoaded', function() {
+
     setYearAndLoadMaps();
 
     var findServicesButton = document.getElementById('findServicesButton');
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Assuming closeMapModal function is defined elsewhere in your script
         btn.addEventListener('click', closeMapModal);
     });
-});
+
 
   // Event listener for toggling the popup
 var toggleButton = document.getElementById('toggleButton');
@@ -167,6 +167,12 @@ function getUserLocation() {
         alert("Geolocation is not supported by this browser.");
         setDefaultLocation();
     }
+}
+var mapButton = document.getElementById('mapButton');
+if (mapButton) {
+    mapButton.addEventListener('click', openMapModal);
+} else {
+    console.error("Map button not found");
 }
 function openMapModal() {
     var modal = document.getElementById("mapModal");
@@ -406,6 +412,21 @@ function clearList() {
 }
 
 //*****************************************************************************
+function openPetProfileModal() {
+    var petProfileModal = document.getElementById("toggleButton"); // Replace with the actual ID
+    if (petProfileModal) {
+        petProfileModal.style.display = "block";
+    } else {
+        console.error("Pet profile modal element not found");
+    }
+}
+var petProfileButton = document.getElementById('toggleButton'); // Replace with the actual ID
+if (petProfileButton) {
+    petProfileButton.addEventListener('click', openPetProfileModal);
+} else {
+    console.error("Pet profile button not found");
+}
+
 function togglePopup() {
     var popup = document.getElementById("popup-1");
     if (popup) {
