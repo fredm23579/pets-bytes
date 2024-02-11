@@ -12,50 +12,69 @@ document.addEventListener('DOMContentLoaded', function() {
             findNearbyServices(selectedType);
         });
     }
-
     
-    document.getElementById('mapButton').addEventListener('click', openMapModal);
-    var closeButtons = document.querySelectorAll('close');
-    closeButtons.forEach(function(btn) {
-        btn.addEventListener('click', closeMapModal);
-    });
-
-    // Event listener for opening the map modal
+    // Assuming openMapModal function is defined elsewhere in your script
     var mapButton = document.getElementById('mapButton');
     if (mapButton) {
         mapButton.addEventListener('click', openMapModal);
     }
-
-    // Event listener for toggling the popup
-    var toggleButton = document.getElementById('toggleButton');
-    if (toggleButton) {
-        toggleButton.addEventListener('click', togglePopup);
+    var closeButton = document.querySelector('.modal .close'); // Adjust selector as needed
+    if (closeButton) {
+        closeButton.addEventListener('click', closeMapModal);
+    } else {
+        console.error("Close button not found");
     }
-    
-    window.addEventListener('click', function(event) {
-        var modal = document.getElementById('mapModal');
-        if (event.target === modal) {
-            closeMapModal();
-        }
-    });
-
-    window.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeMapModal();
-        }
-    });
-
-    var closeButtons = document.querySelectorAll('.close'); // Use .close for class
+    function closeMapModal() {
+    var modal = document.getElementById("mapModal");
+    if (modal) {
+        modal.style.display = "none";
+    } else {
+        console.error("Modal element not found");
+    }
+}
+    // Fixing the selector to target elements with class 'close'
+    var closeButtons = document.querySelectorAll('.close');
     closeButtons.forEach(function(btn) {
+        // Assuming closeMapModal function is defined elsewhere in your script
         btn.addEventListener('click', closeMapModal);
     });
+});
 
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-        informUserGeolocationUnsupported();
-        setDefaultLocation();
+  // Event listener for toggling the popup
+var toggleButton = document.getElementById('toggleButton');
+if (toggleButton) {
+    toggleButton.addEventListener('click', togglePopup); // Ensure togglePopup is defined
+}
+
+// Close modal when clicking outside of it
+window.addEventListener('click', function(event) {
+    var modal = document.getElementById('mapModal'); // Ensure mapModal exists
+    if (event.target === modal) {
+        closeMapModal(); // Ensure closeMapModal is defined
     }
+});
+
+// Close modal with Escape key
+window.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeMapModal(); // Ensure closeMapModal is defined
+    }
+});
+
+// Close buttons event listeners
+var closeButtons = document.querySelectorAll('.close'); // Selects elements with class 'close'
+closeButtons.forEach(function(btn) {
+    btn.addEventListener('click', closeMapModal); // Ensure closeMapModal is defined
+});
+
+// Geolocation handling
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError); // Ensure these functions are defined
+} else {
+    informUserGeolocationUnsupported(); // Ensure this function is defined
+    setDefaultLocation(); // Ensure this function is defined
+}
+
 function informUserGeolocationUnsupported() {
     alert("Geolocation is not supported by this browser. Please enter your location manually.");
 }
@@ -92,21 +111,31 @@ function ipLookupOrManualEntry() {
 }
 
 function geocodeLocation(location) {
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(location)}&key=AIzaSyCBPvVB1Aj1_iy_Zs1s3lsZq9E2Ky9eMjc`)
+    const geocodeApiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(location)}&key=AIzaSyCBPvVB1Aj1_iy_Zs1s3lsZq9E2Ky9eMjc`;
+
+    fetch(geocodeApiUrl)
         .then(response => response.json())
         .then(data => {
-            const { lat, lng } = data.results[0].geometry.location;
-            initMap(lat, lng);
+            if (data.results && data.results.length > 0) {
+                const { lat, lng } = data.results[0].geometry.location;
+                initMap(lat, lng);
+            } else {
+                alert("No results found for the entered location. Showing default location.");
+                setDefaultLocation();
+            }
         })
         .catch(error => {
             console.error('Error geocoding location:', error);
+            alert("An error occurred while geocoding. Showing default location.");
             setDefaultLocation();
         });
 }
 
 function setYearAndLoadMaps() {
-    var currentYear = new Date().getFullYear();
-    document.getElementById('current-year').textContent = currentYear;
+    var currentYearElement = document.getElementById('current-year');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
 
     if (typeof google === 'undefined' || typeof google.maps === 'undefined') {
         loadGoogleMaps();
@@ -115,38 +144,9 @@ function setYearAndLoadMaps() {
     }
 }
 
-function getUserLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, handleLocationError);
-    } else {
-        setDefaultLocation();
-    }
-}
-function openMapModal() {
-    var modal = document.getElementById("mapModal");
-    modal.style.display = "block";
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, handleLocationError);
-    } else {
-        setDefaultLocation();
-    }
-}
-function showPosition(position) {
-    userLocation = { lat: position.coords.latitude, lng: position.coords.longitude };
-    initMap(userLocation.lat, userLocation.lng);
-}
-function handleLocationError(error) {
-    console.warn(`ERROR(${error.code}): ${error.message}`);
-    setDefaultLocation();
-}
-
-function closeMapModal() {
-    var modal = document.getElementById("mapModal");
-    modal.style.display = "none";
-}
-
 function loadGoogleMaps() {
     if (document.querySelector('script[src*="maps.googleapis.com/maps/api/js"]')) {
+        console.log("Google Maps API script already loaded.");
         return; // Already loaded
     }
 
@@ -154,18 +154,119 @@ function loadGoogleMaps() {
     script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCBPvVB1Aj1_iy_Zs1s3lsZq9E2Ky9eMjc&callback=initMap&libraries=places`;
     script.async = true;
     script.defer = true;
+    script.onerror = function() {
+        alert("Failed to load Google Maps API.");
+    };
     document.head.appendChild(script);
 }
 
-function initMap(latitude, longitude) {
-    userLocation = { lat: latitude, lng: longitude };
-    map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
-        center: userLocation
-    });
-    
-    displayNearbyPetServices(map, userLocation);
+function getUserLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, handleLocationError);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+        setDefaultLocation();
+    }
 }
+function openMapModal() {
+    var modal = document.getElementById("mapModal");
+    if (modal) {
+        modal.style.display = "block";
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, handleLocationError, {
+                timeout: 10000 // Optional: Set a timeout for geolocation
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+            setDefaultLocation();
+        }
+    } else {
+        console.error("Modal element not found");
+    }
+}
+function showPosition(position) {
+    if (position && position.coords) {
+        userLocation = { lat: position.coords.latitude, lng: position.coords.longitude };
+        initMap(userLocation.lat, userLocation.lng);
+    } else {
+        console.error('Invalid position object received');
+        // Optionally, handle this error case, e.g., by showing a default location
+        setDefaultLocation(); // Assuming setDefaultLocation is defined
+    }
+}
+function handleLocationError(error) {
+    let errorMessage = "An error occurred while retrieving your location.";
+
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            errorMessage = "Location access has been denied. Please allow location access and try again.";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            errorMessage = "Location information is currently unavailable.";
+            break;
+        case error.TIMEOUT:
+            errorMessage = "The request to get user location timed out.";
+            break;
+        case error.UNKNOWN_ERROR:
+        default:
+            errorMessage = "An unknown error occurred while retrieving your location.";
+            break;
+    }
+
+    console.warn(`Geolocation Error (${error.code}): ${error.message}`);
+    alert(errorMessage);
+    setDefaultLocation();
+}
+
+function closeMapModal() {
+    var modal = document.getElementById("mapModal");
+    if (modal) {
+        modal.style.display = "none";
+        // Optional: Reset modal state or content if necessary
+        // resetModalState(); // Define this function if needed
+    } else {
+        console.error("Modal element not found");
+    }
+}
+function resetModalState() {
+    // Example: Clear dynamically added content
+    var dynamicContent = document.getElementById("dynamicContent");
+    if (dynamicContent) {
+        dynamicContent.innerHTML = '';
+    }
+
+    // Example: Reset a form within the modal
+    var form = document.getElementById("modalForm");
+    if (form) {
+        form.reset();
+    }
+
+    // Example: Reset scroll position of the modal content
+    var modalContent = document.getElementById("modalContent");
+    if (modalContent) {
+        modalContent.scrollTop = 0;
+    }
+
+    // Add other reset actions as necessary
+}
+
+function initMap(latitude, longitude) {
+    var mapElement = document.getElementById('map');
+    if (mapElement) {
+        userLocation = { lat: latitude, lng: longitude };
+        map = new google.maps.Map(mapElement, {
+            zoom: 15,
+            center: userLocation
+        });
+
+        displayNearbyPetServices(map, userLocation);
+    } else {
+        console.error("Map element not found");
+        // Handle the absence of the map element appropriately
+    }
+}
+
 function displayNearbyPetServices(map, userLocation) {
     var request = {
         location: userLocation,
@@ -176,9 +277,18 @@ function displayNearbyPetServices(map, userLocation) {
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, function(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
+            if (results.length === 0) {
+                alert("No nearby pet services found.");
+                return;
+            }
+
+            clearMarkers(); // Assuming this function clears the global markers array
             results.forEach(function(place) {
                 createMarker(place, map);
             });
+        } else {
+            console.error("Places Service error:", status);
+            alert("Failed to retrieve nearby pet services.");
         }
     });
 }
@@ -186,6 +296,11 @@ function displayNearbyPetServices(map, userLocation) {
 function findNearbyServices(serviceType) {
     if (!map) {
         console.error('Map is not initialized');
+        return;
+    }
+
+    if (!serviceType) {
+        console.error('Invalid service type');
         return;
     }
 
@@ -198,66 +313,109 @@ function findNearbyServices(serviceType) {
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, function(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
+            if (results.length === 0) {
+                alert("No services found for the selected type.");
+                return;
+            }
+
             clearMarkers();
             clearList();
             results.forEach(function(place) {
                 createMarker(place);
                 addToList(place);
             });
+        } else {
+            console.error("Places Service error:", status);
+            alert("Failed to retrieve services.");
         }
     });
 }
 
 function createMarker(place) {
-    var marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location
-    });
-    markers.push(marker);
+    // Check if the place has the necessary data
+    if (!place || !place.geometry || !place.geometry.location) {
+        console.error('Invalid place data:', place);
+        return; // Skip this place and return early
+    }
+
+    try {
+        var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location,
+            title: place.name // Optionally, add the place name as a tooltip
+        });
+
+        // Adding an info window to each marker
+        var infoWindow = new google.maps.InfoWindow({
+            content: '<div><strong>' + (place.name || 'No name available') + '</strong><br>' +
+                     'Address: ' + (place.vicinity || 'No address available') + '</div>'
+        });
+
+        marker.addListener('click', function() {
+            infoWindow.open(map, marker);
+        });
+
+        markers.push(marker);
+    } catch (error) {
+        console.error('Error creating marker:', error);
+        // Handle the error appropriately
+        // For example, you might want to log this error to a server for analysis
+    }
 }
 
 function addToList(place) {
     var list = document.getElementById('servicesList');
+    if (!list) {
+        console.error('List element not found');
+        return;
+    }
+
     var entry = document.createElement('div');
-    entry.innerHTML = `<strong>${place.name}</strong><br>${place.vicinity}`;
+    entry.classList.add('list-entry'); // Optional: Add a class for styling
+
+    // Check if place properties are defined
+    var name = place.name || 'Name not available';
+    var vicinity = place.vicinity || 'Address not available';
+
+    // Creating the HTML structure for the entry
+    entry.innerHTML = `<strong>${name}</strong><br><span>${vicinity}</span>`;
+
     list.appendChild(entry);
 }
 
+
 function clearMarkers() {
+    // Iterate through all markers in the array
     for (var i = 0; i < markers.length; i++) {
+        // Remove the marker from the map
         markers[i].setMap(null);
     }
+    // Reset the markers array to clear all stored markers
     markers = [];
 }
 
 function clearList() {
     var list = document.getElementById('servicesList');
-    list.innerHTML = '';
+    if (list) {
+        // Clear the list's contents
+        list.innerHTML = '';
+    } else {
+        console.error('List element not found');
+        // Handle the absence of the list element appropriately
+    }
 }
 
-//var markers = [];
-function createMarker(place) {
-    var marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location
-    });
-    markers.push(marker);
-}
-
-function addToList(place) {
-    var list = document.getElementById('servicesList');
-    var entry = document.createElement('div');
-    entry.innerHTML = `<strong>${place.name}</strong><br>${place.vicinity}`;
-    list.appendChild(entry);
-}
-function clearList() {
-    var list = document.getElementById('servicesList');
-    list.innerHTML = '';
-}
 //*****************************************************************************
 function togglePopup() {
     var popup = document.getElementById("popup-1");
-    popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    if (popup) {
+        popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+
+        // Update accessibility attributes
+        popup.setAttribute('aria-hidden', popup.style.display === 'none');
+    } else {
+        console.error("Popup element not found");
+    }
 }
 // *****************************************************************************
 
