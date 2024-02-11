@@ -172,8 +172,7 @@ function findNearbyServices() {
         }
     });
 }
-var markers = [];
-
+//var markers = [];
 function createMarker(place) {
     var marker = new google.maps.Marker({
         map: map,
