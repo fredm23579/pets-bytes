@@ -1,3 +1,7 @@
+var map; // Global map variable
+var userLocation; // Global user location variable
+var markers = []; // Global markers array
+
 document.addEventListener('DOMContentLoaded', function() {
     setYearAndLoadMaps();
 
@@ -109,20 +113,22 @@ function getUserLocation() {
         setDefaultLocation();
     }
 }
-
-function showPosition(position) {
-    initMap(position.coords.latitude, position.coords.longitude);
-}
-
-function handleLocationError(error) {
-    console.warn(`ERROR(${error.code}): ${error.message}`);
-    setDefaultLocation();
-}
-
 function openMapModal() {
     var modal = document.getElementById("mapModal");
     modal.style.display = "block";
-    showPosition(getUserLocation());
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, handleLocationError);
+    } else {
+        setDefaultLocation();
+    }
+}
+function showPosition(position) {
+    userLocation = { lat: position.coords.latitude, lng: position.coords.longitude };
+    initMap(userLocation.lat, userLocation.lng);
+}
+function handleLocationError(error) {
+    console.warn(`ERROR(${error.code}): ${error.message}`);
+    setDefaultLocation();
 }
 
 function closeMapModal() {
@@ -143,12 +149,12 @@ function loadGoogleMaps() {
 }
 
 function initMap(latitude, longitude) {
-    var userLocation = { lat: latitude, lng: longitude };
-    var map = new google.maps.Map(document.getElementById('map'), {
+    userLocation = { lat: latitude, lng: longitude };
+    map = new google.maps.Map(document.getElementById('map'), {
         zoom: 15,
         center: userLocation
     });
-
+    
     displayNearbyPetServices(map, userLocation);
 }
 
