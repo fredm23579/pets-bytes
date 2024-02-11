@@ -15,13 +15,10 @@
     box-sizing: border-box;
 }
 
-/*  Font Styling  */
+/* Font Styling */
 html, body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
     height: 100%;
-    font-family:Verdana, Geneva, Tahoma, sans-serif; 
-    height: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 body {
@@ -31,28 +28,23 @@ body {
 }
 
 main {
-    flex: 1; /* This ensures that the main content takes up the space it needs */
+    flex: 1;
 }
 
+/* Footer Styling */
 .footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
     text-align: center;
     padding: 20px 0;
     margin-top: auto;
-    position: relative; /* Ensures that the footer stays at the bottom of the page */
-    bottom: 0;
     width: 100%;
-}
-
-body {
-    position: relative; /* Ensures relative positioning for the footer */
 }
 
 /* Header Styling */
 .top-bar {
-    background-color: #333; /* Same as footer */
-    color: white; /* Text color */
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
     padding: 10px 0;
     text-align: center;
 }
@@ -71,12 +63,12 @@ body {
 
 .nav-items a {
     text-decoration: none;
-    color: white; /* Text color matching footer */
+    color: var(--footer-text-color);
     transition: color 0.3s ease;
 }
 
 .nav-items a:hover {
-    color: #008CBA; /* Color for hover effect */
+    color: var(--hover-color);
 }
 
 /* Section Styling */
@@ -88,11 +80,11 @@ body {
 
 /* Header Green Styling */
 h2 {
-    background-color: rgb(55, 102, 59);
+    background-color: var(--primary-color);
     padding: 15px;
 }
 
-/* Paragragh Text Styling */
+/* Paragraph Text Styling */
 p {
     font-size: 20px;
     padding: 25px;
@@ -106,29 +98,14 @@ img {
     padding: 25px;
 }
 
-/* Footer Styling */ 
-.footer {
-    background-color: #333; /* Dark background */
-    color: white; /* Text color */
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
+/* Button Styling */
 .button {
-    background-color: rgb(55, 102, 59);
+    background-color: var(--primary-color);
 }
 
 /* Popup Styling */
 .popup {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -138,8 +115,8 @@ img {
     background: rgba(0, 0, 0, 0.6);
 }
 
-.popup::active {
-    display: block; /* Shown when active */
+.popup.active {
+    display: block;
 }
 
 .popup .overlay {
@@ -159,13 +136,14 @@ img {
     border-radius: 5px;
 }
 
+/* Input Styling */
 input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  }
+}
 
 .popup .close-btn {
     position: absolute;
@@ -197,7 +175,7 @@ input[type=text] {
     width: 80%;
 }
 
-/* Close Styling */
+/* Close Button Styling */
 .close {
     color: #aaa;
     float: right;
@@ -218,7 +196,6 @@ input[type=text] {
 }
 
 #mapButton {
-    /* Example custom styling, adjust as needed */
     background-color: var(--primary-color);
     color: white;
     padding: 10px 20px;
@@ -232,14 +209,7 @@ input[type=text] {
     background-color: var(--hover-color);
 }
 
-#servicesList {
-    margin-top: 20px;
-    overflow-y: auto;
-    max-height: 300px; /* Adjust as needed */
-}
-
-
-/* Media Queries */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .nav-items {
         display: none;
@@ -251,4 +221,3 @@ input[type=text] {
         font-size: 24px;
     }
 }
-
