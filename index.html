@@ -76,27 +76,27 @@
         <!-- Google Maps API section -->
         <section id="mapSection" class="content">
             <h2>Find Services on Map</h2>
-            <!-- Button to Open the Map Modal -->
             <button id="mapButton" aria-label="Open Map">View Map</button>
-            <!-- Map Modal -->
+
             <div id="mapModal" class="modal" aria-hidden="true">
                 <div class="modal-content">
                     <div id="servicesList">
-                    <select id="serviceType">
-                        <option value="veterinary_care">Veterinary Care</option>
-                        <option value="pet_store">Pet Store</option>
-                        <option value="animal_hospital">Animal Hospital</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                    <button class="close" aria-label="Find Nearby Servicecs">Find Services</button>
+                        <select id="serviceType">
+                            <option value="veterinary_care">Veterinary Care</option>
+                            <option value="pet_store">Pet Store</option>
+                            <option value="animal_hospital">Animal Hospital</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                        <button id="findServicesButton" aria-label="Find Nearby Services">Find Services</button>
                     </div>    
                     <button class="close" aria-label="Close Map">&times;</button>
                     <h2>Find Services on Map</h2>
                     <p>Use the map to locate pet services near you.</p>
-                    <div id="map" style="height: 400px; width: 100%;"></div> <!-- Container for Google Map -->
+                    <div id="map" style="height: 400px; width: 100%;"></div>
                 </div>
             </div>
         </section>
+
         
         <!-- Profile Section -->
         <section id="profile" class="content">
