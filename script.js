@@ -2,8 +2,16 @@ var map; // Global map variable
 var userLocation; // Global user location variable
 var markers = []; // Global markers array
 
-
+// DOMContentLoaded Event Listener
+document.addEventListener('DOMContentLoaded', function() {
     setYearAndLoadMaps();
+    setupEventListeners();
+});
+
+// Event Listeners Setup
+function setupEventListeners() {
+    var mapButton = document.getElementById('mapButton');
+    if (mapButton) mapButton.addEventListener('click', openMapModal);
 
     var findServicesButton = document.getElementById('findServicesButton');
     if (findServicesButton) {
@@ -12,19 +20,26 @@ var markers = []; // Global markers array
             findNearbyServices(selectedType);
         });
     }
-    
-    // Assuming openMapModal function is defined elsewhere in your script
-    var mapButton = document.getElementById('mapButton');
-    if (mapButton) {
-        mapButton.addEventListener('click', openMapModal);
-    }
-    var closeButton = document.querySelector('.modal .close'); // Adjust selector as needed
-    if (closeButton) {
-        closeButton.addEventListener('click', closeMapModal);
+
+    var toggleButton = document.getElementById('toggleButton');
+    if (toggleButton) toggleButton.addEventListener('click', togglePopup);
+
+    var closeButtons = document.querySelectorAll('.close');
+    closeButtons.forEach(function(btn) {
+        btn.addEventListener('click', closeMapModal);
+    });
+}
+
+function openMapModal() {
+    var modal = document.getElementById("mapModal");
+    if (modal) {
+        modal.style.display = "block";
     } else {
-        console.error("Close button not found");
+        console.error("Map modal not found");
     }
-    function closeMapModal() {
+}
+
+function closeMapModal() {
     var modal = document.getElementById("mapModal");
     if (modal) {
         modal.style.display = "none";
@@ -32,20 +47,15 @@ var markers = []; // Global markers array
         console.error("Modal element not found");
     }
 }
-    // Fixing the selector to target elements with class 'close'
-    var closeButtons = document.querySelectorAll('.close');
-    closeButtons.forEach(function(btn) {
-        // Assuming closeMapModal function is defined elsewhere in your script
-        btn.addEventListener('click', closeMapModal);
-    });
 
-
-  // Event listener for toggling the popup
-var toggleButton = document.getElementById('toggleButton');
-if (toggleButton) {
-    toggleButton.addEventListener('click', togglePopup); // Ensure togglePopup is defined
+function togglePopup() {
+    var popup = document.getElementById("popup-1");
+    if (popup) {
+        popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    } else {
+        console.error("Popup element not found");
+    }
 }
-
 // Close modal when clicking outside of it
 window.addEventListener('click', function(event) {
     var modal = document.getElementById('mapModal'); // Ensure mapModal exists
@@ -144,6 +154,7 @@ function setYearAndLoadMaps() {
     }
 }
 
+
 function loadGoogleMaps() {
     if (document.querySelector('script[src*="maps.googleapis.com/maps/api/js"]')) {
         console.log("Google Maps API script already loaded.");
@@ -158,6 +169,22 @@ function loadGoogleMaps() {
         alert("Failed to load Google Maps API.");
     };
     document.head.appendChild(script);
+}
+
+function initMap(latitude, longitude) {
+    var mapElement = document.getElementById('map');
+    if (mapElement) {
+        userLocation = { lat: latitude, lng: longitude };
+        map = new google.maps.Map(mapElement, {
+            zoom: 15,
+            center: userLocation
+        });
+
+        displayNearbyPetServices(map, userLocation);
+    } else {
+        console.error("Map element not found");
+        // Handle the absence of the map element appropriately
+    }
 }
 
 function getUserLocation() {
@@ -255,22 +282,6 @@ function resetModalState() {
     }
 
     // Add other reset actions as necessary
-}
-
-function initMap(latitude, longitude) {
-    var mapElement = document.getElementById('map');
-    if (mapElement) {
-        userLocation = { lat: latitude, lng: longitude };
-        map = new google.maps.Map(mapElement, {
-            zoom: 15,
-            center: userLocation
-        });
-
-        displayNearbyPetServices(map, userLocation);
-    } else {
-        console.error("Map element not found");
-        // Handle the absence of the map element appropriately
-    }
 }
 
 function displayNearbyPetServices(map, userLocation) {
