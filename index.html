@@ -37,6 +37,10 @@
        <!-- About Section -->
         <section id="about" class="content">
             <h2>About Us</h2>
+
+            <img src="https://4.bp.blogspot.com/-qIK-2jm1Dp8/UeN7c4y-kxI/AAAAAAAAD6w/mgpYJ2labWg/s1600/Cute-Cat-Facts.jpg" alt="Cute Cat" class="float-center" />
+            <p>We are a pet care website that offers a variety of services to dogs, puppies, kitties, and cats to help you find care for your loved ones. Many of the amenities that we offer including locating veterinarians, pet sitters, dog walking, and pet grooming that you can find located near you.</p>
+
             <img src="https://4.bp.blogspot.com/-qIK-2jm1Dp8/UeN7c4y-kxI/AAAAAAAAD6w/mgpYJ2labWg/s1600/Cute-Cat-Facts.jpg" alt="Cute Cat" class="float-center" loading="lazy"/>
             <p>We are a pet care website that offers a variety of services to dogs, puppies, kitties, and cats to help you find care for your loved ones. Many of the amenities that we offer include locating veterinarians, pet sitters, dog walking, and pet grooming that you can find located near you.</p>
     
@@ -52,6 +56,7 @@
             <div>
                 <img id="breed_image" alt="Selected cat breed image" loading="lazy"/>
             </div>
+
         </section>
 
 
@@ -120,9 +125,27 @@
                     </form>
                 </div>
             </div>
+
+           </div>   
+            
+    <!-- Cat API function -->            
+     <section>       
+    <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector">
+    </select>
+    <div>
+    <a id="wiki_link" target="_blank"></a>
+    <div id="breed_json"></div>
+    </div>
+    <div>
+    <img id="breed_image"></img>
+    </div>
+    </section>
+
+
         </section>
 
     
+
     </main>
 
     <!-- Site Footer -->
