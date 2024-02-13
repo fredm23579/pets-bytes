@@ -445,12 +445,13 @@ function togglePopup() {
     }
 }
 
-const wikipedia_url = `https://api.thecatapi.com/v1/breeds`;
-const Api_key = "live_lbUtmVrpjwLAoF4TTJuGlO7uGg9pNeaGaT3DcxOcHtR429cE9cxWVr7GdGiXauI6"
-let StoredBreeds = []
+// Cat API Code
+const x_url = `https://api.thecatapi.com/v1/breeds`;
+const x_api_key = "live_lbUtmVrpjwLAoF4TTJuGlO7uGg9pNeaGaT3DcxOcHtR429cE9cxWVr7GdGiXauI6"
+let xstoredBreeds = []
 
-fetch(url,{headers: {
-    'x-api-key': Api_key
+fetch(x_url,{headers: {
+    'x-api-key': x_api_key
   }})
 .then((response) => {
  return response.json();
@@ -460,10 +461,10 @@ fetch(url,{headers: {
  //filter to only include those with an `image` object
  data = data.filter(img=> img.image?.url!=null)
  
-StoredBreeds = data;
+    xstoredBreeds = data;
  
- for (let i = 0; i < StoredBreeds.length; i++) {
-  const breed = StoredBreeds[i];
+ for (let i = 0; i < xstoredBreeds.length; i++) {
+  const breed = xstoredBreeds[i];
   let option = document.createElement('option');
    
    //skip any breeds that don't have an image
@@ -484,17 +485,14 @@ document.getElementById('breed_selector').appendChild(option);
 
 function showBreedImage(index)
 { 
-document.getElementById("breed_image").src= StoredBreeds[index].image.url;
+document.getElementById("breed_image").src= CatstoredBreeds[index].image.url;
 
-document.getElementById("breed_json").textContent= StoredBreeds[index].temperament
+document.getElementById("breed_json").textContent= CatstoredBreeds[index].temperament
 
 
-document.getElementById("wiki_link").href= StoredBreeds[index].wikipedia_url
-document.getElementById("wiki_link").innerHTML= StoredBreeds[index].wikipedia_url
+document.getElementById("wiki_link").href= CatstoredBreeds[index].wikipedia_url
+document.getElementById("wiki_link").innerHTML= CatstoredBreeds[index].wikipedia_url
 }
-
-
-
 
 // Dog API Code // 
 const url = `https://api.thedogapi.com/v1/breeds`;
