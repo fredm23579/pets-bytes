@@ -98,6 +98,11 @@ img {
     padding: 25px;
 }
 
+#breed_image {
+    max-width: 50%;
+    text-align: left;
+}
+
 /* Button Styling */
 .button {
     background-color: var(--primary-color);
