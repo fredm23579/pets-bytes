@@ -243,24 +243,4 @@ function addToList(place) {
     list.appendChild(entry);
 }
 
-// Open pet profile modal
-function openPetProfileModal() {
-    var petProfileModal = document.getElementById("toggleButton");
-    if (petProfileModal) {
-        petProfileModal.style.display = "block";
-    } else {
-        console.error("Pet profile modal element not found");
-    }
-}
-
-// Close pet profile modal
-
-function closePetProfileModal() {
-    var petProfileModal = document.getElementById("toggleButton");
-    if (petProfileModal) {
-        petProfileModal.style.display = "none";
-    } else {
-        console.error("Pet profile modal element not found");
-    }
-}
 
