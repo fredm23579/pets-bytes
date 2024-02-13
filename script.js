@@ -444,64 +444,57 @@ function togglePopup() {
         console.error("Popup element not found");
     }
 }
-// *****************************************************************************
 
-// Dog API for Code // 
-function loadDogAPI() {
-    var script = document.createElement ('script');
-    script.src = `https://dogapi.dog/api/v2/breeds`;
-    document.head.appendChild(script);
-}
+const wikipedia_url = `https://api.thecatapi.com/v1/breeds`;
+const Api_key = "live_lbUtmVrpjwLAoF4TTJuGlO7uGg9pNeaGaT3DcxOcHtR429cE9cxWVr7GdGiXauI6"
+let StoredBreeds = []
 
-
-// Cat API Code // 
-const urll = `https://api.thecatapi.com/v1/breeds`;
-const apii_key = "live_jagmaJUduCuXhbOEdM3zaXvwF23VZhrs6cA5u9KoZaPhBmXvnZEmRgu5VV31fAkE"
-let storeddBreeds = []
-
- fetch(url,{headers: {
-      'x-api-key': api_key
-    }})
- .then((response) => {
-   return response.json();
- })
+fetch(url,{headers: {
+    'x-api-key': Api_key
+  }})
+.then((response) => {
+ return response.json();
+})
 .then((data) => {
+ 
+ //filter to only include those with an `image` object
+ data = data.filter(img=> img.image?.url!=null)
+ 
+StoredBreeds = data;
+ 
+ for (let i = 0; i < StoredBreeds.length; i++) {
+  const breed = StoredBreeds[i];
+  let option = document.createElement('option');
    
-   //filter to only include those with an `image` object
-   data = data.filter(img=> img.image?.url!=null)
+   //skip any breeds that don't have an image
+   if(!breed.image)continue
    
-  storedBreeds = data;
-   
-   for (let i = 0; i < storedBreeds.length; i++) {
-    const breed = storedBreeds[i];
-    let option = document.createElement('option');
-     
-     //skip any breeds that don't have an image
-     if(!breed.image)continue
-     
-    //use the current array index
-    option.value = i;
-    option.innerHTML = `${breed.name}`;
+  //use the current array index
+  option.value = i;
+  option.innerHTML = `${breed.name}`;
 document.getElementById('breed_selector').appendChild(option);
-    
-    }
-   //show the first breed by default
-   showBreedImage(0)
+  
+  }
+ //show the first breed by default
+ showBreedImage(0)
 })
 .catch(function(error) {
-   console.log(error);
+ console.log(error);
 });
 
 function showBreedImage(index)
-{
-  document.getElementById("breed_image").src= storedBreeds[index].image.url;
-  
-  document.getElementById("breed_json").textContent= storedBreeds[index].temperament
-  
-  
-  document.getElementById("wiki_link").href= storedBreeds[index].wikipedia_url
-  document.getElementById("wiki_link").innerHTML= storedBreeds[index].wikipedia_url
+{ 
+document.getElementById("breed_image").src= StoredBreeds[index].image.url;
+
+document.getElementById("breed_json").textContent= StoredBreeds[index].temperament
+
+
+document.getElementById("wiki_link").href= StoredBreeds[index].wikipedia_url
+document.getElementById("wiki_link").innerHTML= StoredBreeds[index].wikipedia_url
 }
+
+
+
 
 // Dog API Code // 
 const url = `https://api.thedogapi.com/v1/breeds`;
@@ -551,3 +544,5 @@ function showBreedImage(index)
   document.getElementById("wiki_link").href= storedBreeds[index].wikipedia_url
   document.getElementById("wiki_link").innerHTML= storedBreeds[index].wikipedia_url
 }
+
+
