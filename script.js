@@ -1,8 +1,3 @@
-var map; // Global map variable
-var userLocation; // Global user location variable
-var markers = []; // Global markers array
-
-// DOMContentLoaded Event Listener
 document.addEventListener('DOMContentLoaded', function() {
     setYearAndLoadMaps();
     setupEventListeners();
@@ -498,7 +493,7 @@ document.getElementById('breed_selector').appendChild(option);
 });
 
 function showBreedImage(index)
-{ 
+{
   document.getElementById("breed_image").src= storedBreeds[index].image.url;
   
   document.getElementById("breed_json").textContent= storedBreeds[index].temperament
@@ -507,6 +502,3 @@ function showBreedImage(index)
   document.getElementById("wiki_link").href= storedBreeds[index].wikipedia_url
   document.getElementById("wiki_link").innerHTML= storedBreeds[index].wikipedia_url
 }
-
-});
-
