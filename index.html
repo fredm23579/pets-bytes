@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Site Header -->
     <header class="top-bar">
@@ -65,10 +66,18 @@
         <!-- Google Maps API section -->
         <section id="mapSection" class="content">
             <h2>Find Services on Map</h2>
-            <button id="mapButton" aria-label="Open Map">View Map</button>
-
-            <div id="mapModal" class="modal" aria-hidden="true">
+            <button id="myBtn" aria-label="View Map">View Map</button>
+            <!-- Button to trigger modal -->
+            <!-- Modal -->
+            <div id="myModal" class="modal" aria-hidden="true">
                 <div class="modal-content">
+                    <span class="close" aria-label="Close Modal">&times;</span>
+                    <h2>Find Services on Map</h2>
+                    <p>Use the map to locate pet services near you.</p>
+                    <div id="map"></div>
+                    <!-- Container for Google Map -->
+                    <ul id="places"></ul>
+                    <!-- Container for list of places -->
                     <div id="servicesList">
                         <select id="serviceType">
                             <option value="veterinary_care">Veterinary Care</option>
@@ -80,8 +89,9 @@
                     </div>    
                     <button class="close" aria-label="Close Map">&times;</button>
                     <h2>Find Services on Map</h2>
-                    <p>Use the map to locate pet services near you.</p>
-                    <div id="map" style="height: 400px; width: 100%;"></div>
+                    <p>Use the map to locate pet services near you. (Zoom out if you don't see any markers}</p>
+                    <div id="map"></div>
+                    <button id="more">Show more Results</button>
                 </div>
             </div>
         </section>
@@ -109,39 +119,34 @@
                     </form>
                 </div>
             </div>
-
-           </div>   
+              
+        </section>   
             
     <!-- Cat API function -->            
-     <section>       
-    <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector">
-    </select>
-    <div>
-    <a id="wiki_link" target="_blank"></a>
-    <div id="breed_json"></div>
-    </div>
-    <div>
-    <img id="breed_image"></img>
-    </div>
-    </section>
+        <section>       
+            <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector">
+            </select>
+            <div>
+                <a id="wiki_link" target="_blank"></a>
+                <div id="breed_json"></div>
+            </div>
+            <div>
+                <img id="breed_image"></img>
+            </div>
+        </section>
 
     <!-- Dog API function -->            
-    <section>       
-        <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector">
-        </select>
-        <div>
-        <a id="wiki_link" target="_blank"></a>
-        <div id="breed_json"></div>
-        </div>
-        <div>
-        <img id="breed_image"></img>
-        </div>
+        <section>       
+            <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector">
+            </select>
+            <div>
+                <a id="wiki_link" target="_blank"></a>
+                <div id="breed_json"></div>
+            </div>
+            <div>
+                <img id="breed_image"></img>
+            </div>
         </section>
-
-
-        </section>
-
-    
 
     </main>
 
