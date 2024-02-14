@@ -3,8 +3,6 @@ var markers = [];
 var modal, btn, span, service;
 var userLocation = { lat: 40.7128, lng: -74.0060 }; // Default location (New York City)
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
     Window.initMap = initMap;
     setYearAndLoadMaps();
@@ -246,50 +244,3 @@ function addToList(place) {
 }
 
 
-document.addEventListener('DOMContentLoaded', function() {
-       setupEventListeners();
-});
-
-// Event Listeners Setup
-function setupEventListeners() {
-    var toggleButton = document.getElementById('toggleButton');
-    if (toggleButton) toggleButton.addEventListener('click', togglePopup);
-
-}
-
-function togglePopup() {
-    var popup = document.getElementById("popup-1");
-    if (popup) {
-        popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
-    } else {
-        console.error("Popup element not found");
-    }
-}
-//*****************************************************************************
-function openPetProfileModal() {
-    var petProfileModal = document.getElementById("toggleButton"); // Replace with the actual ID
-    if (petProfileModal) {
-        petProfileModal.style.display = "block";
-    } else {
-        console.error("Pet profile modal element not found");
-    }
-}
-var petProfileButton = document.getElementById('toggleButton'); // Replace with the actual ID
-if (petProfileButton) {
-    petProfileButton.addEventListener('click', openPetProfileModal);
-} else {
-    console.error("Pet profile button not found");
-}
-
-function togglePopup() {
-    var popup = document.getElementById("popup-1");
-    if (popup) {
-        popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
-
-        // Update accessibility attributes
-        popup.setAttribute('aria-hidden', popup.style.display === 'none');
-    } else {
-        console.error("Popup element not found");
-    }
-}
-//***************************************************************************************
