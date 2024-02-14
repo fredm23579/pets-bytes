@@ -64,22 +64,35 @@
         </section>
          
         <!-- Google Maps API section -->
-        <section id="mapSection" class="content">
+<section id="mapSection" class="content">
+    <h2>Find Services on Map</h2>
+    <button id="myBtn" aria-label="View Map">View Map</button>
+    <!-- Button to trigger modal -->
+    <!-- Modal -->
+    <div id="myModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close" aria-label="Close Modal">&times;</span>
             <h2>Find Services on Map</h2>
-            <!-- Button to trigger modal -->
-            <button id="myBtn" aria-label="View Map">View Map</button>
-            <!-- Modal -->
-            <div id="myModal" class="modal" aria-hidden="true">
-                <div class="modal-content">
-                    <span class="close" aria-label="Close Modal">&times;</span>
-                    <h2>Find Services on Map</h2>
-                    <p>Use the map to locate pet services near you.(Zoom out if you don't see any markers)</p>
-                    <div id="map"></div> <!-- Container for Google Map -->
-                    <ul id="places"></ul>
-                    <button id="more">Show more Results</button>
-                </div>
-            </div>
-        </section>
+            <p>Use the map to locate pet services near you. (Zoom out if you cannot see any markers)</p>
+            <div id="map"></div>
+            <!-- Container for Google Map -->
+            <ul id="places"></ul>
+            <!-- Container for list of places -->
+            <div id="servicesList">
+                <select id="serviceType">
+                    <option value="veterinary_care">Veterinary Care</option>
+                    <option value="pet_store">Pet Store</option>
+                    <option value="animal_hospital">Animal Hospital</option>
+                    <!-- Add more options as needed -->
+                </select>
+                <button id="findServicesButton" aria-label="Find Nearby Services">Find Services</button>
+            </div>    
+            <button class="close" aria-label="Close Map">&times;</button>
+            <div id="map"></div>
+            <button id="more">Show more Results</button>
+        </div>
+    </div>
+</section>
 
         
         <!-- Profile Section -->
