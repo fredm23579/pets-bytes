@@ -28,6 +28,7 @@ The application harnesses the power of the Google Maps JavaScript API to offer l
 2. Install necessary dependencies (if any).
 3. Run the application locally or deploy it using your preferred web server.
 ![screenshot of repository](<./assets/imgs/Screen Shot 2024-02-13 at 8.50.32 PM.png>)
+![screenshot of repository](<./assets/imgs/image.png>)
 
 ### Clone
 
