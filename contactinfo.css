@@ -65,6 +65,7 @@ html, body {
     max-height: 400px;
     height: auto;
     padding: 25px;
+    position: center;
 
 }
 
@@ -115,7 +116,8 @@ html, body {
 .foodbowl{
     width: 600;
     height: 900px;
-    position: relative;
+    position: center;
+
 
 }
 
