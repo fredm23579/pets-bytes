@@ -13,7 +13,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function setupEventListeners() {
     var mapButton = document.getElementById('mapButton');
-    mapButton.addEventListener('click', openMapModal);
+    if (mapButton) mapButton.addEventListener('click', openMapModal);
+
+    var findServicesButton = document.getElementById('findServicesButton');
+    if (findServicesButton) {
+        findServicesButton.addEventListener('click', function () {
+            var selectedType = document.getElementById('serviceType').value;
+            findNearbyServices(selectedType);
+        });
+    }
+
+    var toggleButton = document.getElementById('toggleButton');
+    if (toggleButton) toggleButton.addEventListener('click', togglePopup);
 }
 
 function setupModalElements() {
@@ -52,7 +63,7 @@ function setYearAndLoadMaps() {
 }
 
 function openMapModal() {
-    modal.style.display = "block";
+    if (modal) modal.style.display = "block";
 }
 
 // Rest of the functions (findNearbyServices, processResults, createMarkers, etc.) remain the same
@@ -84,6 +95,7 @@ function userLocationSuccess(position) {
     };
     map.setCenter(userLocation);
     searchNearby(userLocation);
+    //searchNearby(userLocation);
 }
 function userLocationError(error) {
     console.error('Geolocation error:', error);
@@ -196,6 +208,25 @@ function setupPagination(pagination) {
 function clearPlacesList() {
     var placesList = document.getElementById('places');
     placesList.innerHTML = '';
+}
+
+// Find nearby services based on the selected type from the dropdown
+function findNearbyServices(serviceType) {
+    var request = {
+        location: userLocation,
+        radius: 5000,
+        type: [serviceType]
+    };
+
+    service.nearbySearch(request, processResults);
+}
+
+// Toggle the visibility of the pet profile popup
+function togglePopup() {
+    var popup = document.getElementById("popup-1");
+    if (popup) {
+        popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    }
 }
 
 // Add a selected place to the services list
