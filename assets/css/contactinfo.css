@@ -1,0 +1,139 @@
+html, body {
+    height: 100%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+
+#h1-vetinfo{
+    font-weight:bolder;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+   text-align: center;
+    text-decoration: underline;
+
+
+    
+}
+
+
+
+
+#vet-info{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+
+
+
+
+.vetimg{
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    padding: 25px;
+
+}
+
+
+
+
+#h1-grooming{
+    font-weight:bolder;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+   text-align: center;
+    text-decoration: underline;
+    
+
+}
+
+
+#p-grooming{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+   
+
+}
+
+.catbath{
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    padding: 25px;
+
+}
+
+
+#h1-walker{
+    font-weight:bolder;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+   text-align: center;
+    text-decoration: underline;
+}
+
+
+#p-walker{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+
+}
+
+
+.dogwalker{
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    padding: 25px;
+}
+
+#h1-petfood{
+    font-weight:bolder;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+   text-align: center;
+    text-decoration: underline;
+    
+}
+
+
+
+#p-petfood{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+
+/* adjust img for food */
+.foodbowl{
+    width: 600;
+    height: 900px;
+    position: relative;
+
+}
+
+
+/* Footer Styling */ 
+.footer {
+    background-color: #333; /* Dark background */
+    color: white; /* Text color */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
