@@ -485,7 +485,7 @@ document.getElementById('breed_selector').appendChild(option);
 });
 
 function showBreedImage(index)
-{
+{ 
   document.getElementById("breed_image").src= storedBreeds[index].image.url;
   
   document.getElementById("breed_json").textContent= storedBreeds[index].temperament
