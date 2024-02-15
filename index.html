@@ -1,7 +1,8 @@
 <!-- Document type with link attachments -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pet's Bytes - Your go-to app for all pet-related services">
@@ -9,146 +10,142 @@
     <title>Pet's Bytes!</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/maps.css">
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Site Header -->
     <header class="top-bar">
-        <h1>Pet's Bytes</h1>
-        <!-- Navigation -->
-        <nav>
-            <ul class="nav-items">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#services">Services</a></li>
-            </ul>
-        </nav>
+      <h1>Pet's Bytes</h1>
+      <!-- Navigation -->
+      <nav>
+        <ul class="nav-items">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#services">Services</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Main Content -->
     <main class="grid-container">
-        <!-- Home Section -->
-        <section id="home" class="content">
-            <h2>Welcome to Pet's Bytes!</h2>
-            <img src="https://inspirationseek.com/wp-content/uploads/2016/02/Cute-Dog-Photo.jpg" alt="Cute Dog" class="float-center" loading="lazy" />
-            <p>Welcome to our pet friendly webpage where you can find all that we have to offer for our furry family pets!</p>
-        </section>
+      <!-- Home Section -->
+      <section id="home" class="content">
+        <h2>Welcome to Pet's Bytes!</h2>
+        <img src="https://inspirationseek.com/wp-content/uploads/2016/02/Cute-Dog-Photo.jpg" alt="Cute Dog" class="float-center" loading="lazy" />
+        <p>Welcome to our pet friendly webpage where you can find all that we have to offer for our furry family pets!</p>
+      </section>
 
-       <!-- About Section -->
-        <section id="about" class="content">
-            <h2>About Us</h2>
+      <!-- About Section -->
+      <section id="about" class="content">
+        <h2>About Us</h2>
 
-            <img src="https://4.bp.blogspot.com/-qIK-2jm1Dp8/UeN7c4y-kxI/AAAAAAAAD6w/mgpYJ2labWg/s1600/Cute-Cat-Facts.jpg" alt="Cute Cat" class="float-center" />
-            <p>We are a pet care website that offers a variety of services to many animals and helps you find care for your loved ones. Many of the amenities that we offer including locating veterinarians, pet sitters, dog walking, and pet groomers that you can find located near you.</p>
+        <img src="https://4.bp.blogspot.com/-qIK-2jm1Dp8/UeN7c4y-kxI/AAAAAAAAD6w/mgpYJ2labWg/s1600/Cute-Cat-Facts.jpg" alt="Cute Cat" class="float-center" />
+        <p>We are a pet care website that offers a variety of services to many animals and helps you find care for your loved ones. Many of the amenities that we offer including locating veterinarians, pet sitters, dog walking, and pet groomers that you can find located near you.</p>
 
-        </section>
+      </section>
 
 
-        <!-- Contact Section -->
-        <section id="contact" class="content">
-            <h2>Contact Us</h2>
-            <a href="contactinfo.html">
-                <img src="https://www.fearfreehappyhomes.com/wp-content/uploads/2021/03/bigstock-Young-Woman-Taking-Photo-Of-Cu-374979739.jpg" alt="Dog Call" class="float-center" />
-            </a>
-            <p>Here you will find links to phone numbers, emails, and other contact information for our different services.</p>
-            <a href="contactinfo.html" aria-label="View Contact Information">Contact info link</a>
-        </section>
+      <!-- Contact Section -->
+      <section id="contact" class="content">
+        <h2>Contact Us</h2>
+        <a href="contactinfo.html">
+          <img src="https://www.fearfreehappyhomes.com/wp-content/uploads/2021/03/bigstock-Young-Woman-Taking-Photo-Of-Cu-374979739.jpg" alt="Dog Call" class="float-center" />
+        </a>
+        <p>Here you will find links to phone numbers, emails, and other contact information for our different services.</p>
+        <a href="contactinfo.html" aria-label="View Contact Information">Contact info link</a>
+      </section>
 
-        <!-- Services Section -->
-        <section id="services" class="content">
-            <h2>Our Services</h2>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LrToBEtSXKSw20rqoDtiyFCe2QvPhP2MFg&usqp=CAU" alt="Professional Pet Care Services" class="float-center" />
-            <p>Explore our comprehensive range of pet care services including veterinary care, pet groomers, and professional pet sitters. Catering to all your pet's needs under one roof.</p>
-        </section>
-         
-         <!-- Google Maps API section -->
-        <section id="mapSection" class="content">
+      <!-- Services Section -->
+      <section id="services" class="content">
+        <h2>Our Services</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LrToBEtSXKSw20rqoDtiyFCe2QvPhP2MFg&usqp=CAU" alt="Professional Pet Care Services" class="float-center" />
+        <p>Explore our comprehensive range of pet care services including veterinary care, pet groomers, and professional pet sitters. Catering to all your pet's needs under one roof.</p>
+      </section>
+
+      <!-- Google Maps API section -->
+      <section id="mapSection" class="content">
+        <h2>Find Services on Map</h2>
+        <button id="myBtn" aria-label="View Map">View Map</button>
+        <!-- Button to trigger modal -->
+        <!-- Modal -->
+        <div id="myModal" class="modal" aria-hidden="true">
+          <div class="modal-content">
+            <span class="close" aria-label="Close Modal">&times;</span>
             <h2>Find Services on Map</h2>
-            <button id="myBtn" aria-label="View Map">View Map</button>
-            <!-- Button to trigger modal -->
-            <!-- Modal -->
-            <div id="myModal" class="modal" aria-hidden="true">
-                <div class="modal-content">
-                    <span class="close" aria-label="Close Modal">&times;</span>
-                    <h2>Find Services on Map</h2>
-                    <p>Use the map to locate pet services near you.</p>
-                    <div id="map"></div>
-                    <!-- Container for Google Map -->
-                    <ul id="places"></ul>
-                    <!-- Container for list of places -->
-                    <div id="servicesList">
-                        <select id="serviceType">
-                            <option value="veterinary_care">Veterinary Care</option>
-                            <option value="pet_store">Pet Store</option>
-                            <option value="animal_hospital">Animal Hospital</option>
-                            <!-- Add more options as needed -->
-                        </select>
-                        <button id="findServicesButton" aria-label="Find Nearby Services">Find Services</button>
-                    </div>    
-                    <button class="close" aria-label="Close Map">&times;</button>
-                    <h2>Find Services on Map</h2>
-                    <p>Use the map to locate pet services near you. (Zoom out if you don't see any markers)</p>
-                    <div id="map"></div>
-                    <button id="more">Show more Results</button>
-                </div>
+            <p>Use the map to locate pet services near you.</p>
+            <div id="map"></div>
+            <!-- Container for Google Map -->
+            <ul id="places"></ul>
+            <!-- Container for list of places -->
+            <div id="servicesList">
+              <select id="serviceType">
+                <option value="veterinary_care">Veterinary Care</option>
+                <option value="pet_store">Pet Store</option>
+                <option value="animal_hospital">Animal Hospital</option>
+                <!-- Add more options as needed -->
+              </select>
+              <button id="findServicesButton" aria-label="Find Nearby Services">Find Services</button>
             </div>
+            <button class="close" aria-label="Close Map">&times;</button>
+            <h2>Find Services on Map</h2>
+            <p>Use the map to locate pet services near you. (Zoom out if you don't see any markers)</p>
+            <div id="map"></div>
+            <button id="more">Show more Results</button>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- Pet Profile Modal -->
+      <section id="petProfileModal" class="modal">
+        <section class="modal-content">
+          <span class="close" id="closePetProfile">&times;</span>
+          <h2>Pet Profile</h2>
+          <form id="petProfileForm">
+            <label for="petName">Name:</label>
+            <input type="text" id="petName">
+            <label for="petAge">Age:</label>
+            <input type="number" id="petAge">
+            <label for="petBreed">Breed:</label>
+            <input type="text" id="petBreed">
+            <!-- Add more fields as necessary -->
+            <button type="button" id="savePetProfileBtn">Save Profile</button>
+          </form>
         </section>
+      </section>
+
+      <button id="openPetProfileBtn">Edit Pet Profile</button>
 
 
-        
-        <!-- Profile Section -->
-        <section id="profile" class="content">
-            <h2>Add Your Pet's Profile</h2>
-            <button id="toggleButton" aria-controls="popup-1" aria-expanded="false">Add Pet Profile Here</button>
-            <!-- Popup for Adding Pet Profile -->
-            <div class="popup" id="popup-1" aria-hidden="true">
-                <div class="overlay"></div>
-                <div class="content">
-                    <button class="close-btn" aria-label="Close">✖</button>
-                    <form id="petProfileForm">
-                        <div class="form-group">
-                            <label for="petName">Pet's Name</label>
-                            <input type="text" id="petName" name="petName" placeholder="Pet's Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="petBreed">Pet's Breed</label>
-                            <input type="text" id="petBreed" name="petBreed" placeholder="Pet's Breed" required>
-                        </div>
-                        <button type="submit" class="button">Save Profile</button>
-                    </form>
-                </div>
-            </div>
-              
-        </section>   
-            
-  
-    <!-- Dog API function -->            
-    
-<select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector">
-</select>
 
-<div>
-<a id="wiki_link" target="_blank"></a>
-<div id="breed_json"></div>
-</div>
+      <!-- Dog API function -->
 
-<div>
-<img id="breed_image"></img>
-</div>
+      <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector">
+      </select>
 
-    <!-- Site Footer -->
-    <section id="footer" class="footer">
+      <div>
+        <a id="wiki_link" target="_blank"></a>
+        <div id="breed_json"></div>
+      </div>
+
+      <div>
+        <img id="breed_image"></img>
+      </div>
+
+      <!-- Site Footer -->
+      <section id="footer" class="footer">
         <footer class="footer">
-            <p id="footer">&copy; <span id="current-year"></span> Pet's Bytes</p>
+          <p id="footer">&copy; <span id="current-year"></span> Pet's Bytes</p>
         </footer>
-    </section>
+      </section>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/maps.js"></script>
-    
-</body>
-            
+      <!-- Scripts -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="./assets/js/script.js"></script>
+      <script src="./assets/js/maps.js"></script>
+
+  </body>
+
 </html>
