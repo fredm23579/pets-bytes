@@ -98,29 +98,25 @@
 
         
         <!-- Profile Section -->
-        <section id="profile" class="content">
-            <h2>Add Your Pet's Profile</h2>
-            <button id="toggleButton" aria-controls="popup-1" aria-expanded="false">Add Pet Profile Here</button>
-            <!-- Popup for Adding Pet Profile -->
-            <div class="popup" id="popup-1" aria-hidden="true">
-                <div class="overlay"></div>
-                <div class="content">
-                    <button class="close-btn" aria-label="Close">✖</button>
-                    <form id="petProfileForm">
-                        <div class="form-group">
-                            <label for="petName">Pet's Name</label>
-                            <input type="text" id="petName" name="petName" placeholder="Pet's Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="petBreed">Pet's Breed</label>
-                            <input type="text" id="petBreed" name="petBreed" placeholder="Pet's Breed" required>
-                        </div>
-                        <button type="submit" class="button">Save Profile</button>
-                    </form>
-                </div>
-            </div>
-              
-        </section>   
+        <section id="petProfileModal" class="modal">
+            <section class="modal-content">
+                <span class="close" id="closePetProfile">&times;</span>
+                <h2>Pet Profile</h2>
+                <form id="petProfileForm">
+                    <label for="petName">Name:</label>
+                    <input type="text" id="petName">
+                    <label for="petAge">Age:</label>
+                    <input type="number" id="petAge">
+                    <label for="petBreed">Breed:</label>
+                    <input type="text" id="petBreed">
+                    <!-- Add more fields as necessary -->
+                    <button type="button" id="savePetProfileBtn">Save Profile</button>
+                </form>
+            </section>
+        </section>
+
+        <button id="openPetProfileBtn">Edit Pet Profile</button>
+
             
   
     <!-- Dog API function -->            
