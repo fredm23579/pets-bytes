@@ -46,8 +46,9 @@ The application harnesses the power of the Google Maps JavaScript API to offer l
 - CSS3
 - JavaScript
 - Foundation CSS Framework
-- jQuery and jQuery UI
+- jQuery
 - Google Maps JavaScript API
+- Dog API
 
 ## 📚 External Resources
 - [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/places) for location-based services.
