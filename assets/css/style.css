@@ -42,7 +42,7 @@ main {
 }
 
 /* Header Styling */
-#top-bar {
+#header {
     background-color: var(--footer-background-color);
     color: var(--footer-text-color);
     padding: 10px 0;
@@ -50,24 +50,24 @@ main {
 }
 
 /* Navigation Bar Styling */
-#nav-items {
+#ul {
     list-style: none;
     text-align: center;
     padding: 10px 0;
 }
 
-#nav-items li {
+#ul li {
     display: inline;
     margin-right: 20px;
 }
 
-#nav-items a {
+#ul a {
     text-decoration: none;
     color: var(--footer-text-color);
     transition: color 0.3s ease;
 }
 
-#nav-items a:hover {
+#ul a:hover {
     color: var(--hover-color);
 }
 
@@ -197,13 +197,13 @@ input[type=text] {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    #nav-items {
+    #ul {
         display: none;
     }
 }
 
 @media (max-width: 480px) {
-    #top-bar h1 {
+    #header h1 {
         font-size: 24px;
     }
 }
