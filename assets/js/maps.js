@@ -117,7 +117,7 @@ function initMap() {
   }
 
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 11,
+    zoom: 5000,
     center: userLocation
   });
 
@@ -368,6 +368,3 @@ document.addEventListener('DOMContentLoaded', function() {
   savePetProfile();
   // Other initializations...
 });
-
-
-
