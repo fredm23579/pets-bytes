@@ -43,12 +43,14 @@ The application harnesses the power of the Google Maps JavaScript API to offer l
 
 ## Technologies Used
 - HTML5
-- CSS3
+- CSS
 - JavaScript
 - Foundation CSS Framework
 - jQuery
 - Google Maps JavaScript API
+- Google Maps Places API Library
 - Dog API
+- Browser Geolocation Web API
 
 ## 📚 External Resources
 - [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/places) for location-based services.
